@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>DinoMotion — Trailers e Motion Design para Games</title>
+  <meta name="description" content="Estúdio especializado em trailers cinematográficos, anúncios animados e identidade em movimento para estúdios indie e jogos na Steam.">
+  <link rel="canonical" href="./">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  
+  <meta property="og:title" content="DinoMotion — Trailers e Motion Design para Games">
+  <meta property="og:description" content="Trailers cinematográficos, criativos animados e identidade em movimento para estúdios indie e jogos na Steam.">
+  
+
+  <!-- Schema.org JSON-LD -->
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-creme: #fdf6ea;
+      --ink: #111111;
+      --white: #ffffff;
+      --dino-green: #10b981;
+      --coral-neon: #ff5436;
+      --gamepad-purple: #8b5cf6;
+      --coin-yellow: #facc15;
+      --cyan-neon: #06b6d4;
+      --panel-active: var(--dino-green);
+    }
+  </style>
+  <link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="study.css">
+</head>
+<body class="loading">
+
+  <!-- Textura de Papel Físico Analógico -->
+  <div class="paper-overlay" aria-hidden="true"></div>
+
+  <!-- LOADER INICIAL RETRÔ ARCADE -->
+  <div id="loader" aria-hidden="true">
+    <img src="assets/img/dino-cloud.svg" class="ld-sky-cloud c1" width="160" height="90" alt="">
+    <img src="assets/img/dino-cloud-2.svg" class="ld-sky-cloud c2" width="200" height="110" alt="">
+    <img src="assets/img/dino-cloud-3.svg" class="ld-sky-cloud c3" width="140" height="80" alt="">
+
+    <div class="ld-box">
+      <span class="ld-badge">INSERT COIN · READY?</span>
+      <div class="ld-title">DINOMOTION</div>
+      <p class="ld-tagline">Carregando trailers indie e texturas de papel...</p>
+      <div class="ld-progress-bar">
+        <div class="ld-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <!-- RETRO GAMER XP SCROLL PROGRESS HUD -->
+    <div class="scroll-hud-bar" id="scroll-hud" aria-hidden="true">
+      <div class="scroll-hud-inner">
+        <span class="scroll-hud-icon" aria-hidden="true">🦖</span>
+        <span class="scroll-hud-label">GAME PROGRESS:</span>
+        <div class="scroll-hud-track">
+          <div class="scroll-hud-fill" id="scroll-hud-fill"></div>
+          <span class="scroll-hud-pin" id="scroll-hud-pin" aria-hidden="true">👾</span>
+        </div>
+        <span class="scroll-hud-pct" id="scroll-hud-pct">0%</span>
+      </div>
+    </div>
+
+    <div class="nav-inner">
+      <a href="#" class="brand-logo" aria-label="DinoMotion Página Inicial">
+        <span class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 11l4-4 4 4M10 7v11M4 20h16"/></svg>
+        </span>
+        <span>DINOMOTION</span>
+      </a>
+      <nav aria-label="Navegação principal">
+        <ul class="nav-links">
+          <li><a href="#sobre" class="nav-link">Sobre</a></li>
+          <li><a href="#servicos" class="nav-link">Trailers & Portfólio</a></li>
+          <li><a href="produtos.html" class="nav-link">Packs de Assets ✦</a></li>
+          <li><a href="#contato" class="nav-link">Contato</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button id="bgm-toggle" class="btn-bgm-toggle" title="Ligar / Desligar Som Ambiente Gamer" aria-label="Ligar ou desligar som ambiente">
+          <span class="bgm-equalizer" aria-hidden="true">
+            <span class="bar b1"></span>
+            <span class="bar b2"></span>
+            <span class="bar b3"></span>
+          </span>
+          <span class="bgm-label">SOM AMBIENTE: OFF</span>
+        </button>
+        <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-sm btn-green" aria-label="Iniciar conversa no WhatsApp">
+          <span class="btn-shadow"></span>
+          <span class="btn-face">Bora Conversar</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION (LETTERING MONUMENTAL + DINO LIVRE) -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+            <span>TRAILERS E MOTION DESIGN PARA JOGOS INDIE</span>
+          </div>
+          <h1 class="hero-title kinetic-title" aria-label="Seu jogo merece um trailer que o jogador dê play.">
+            <span class="kinetic-line"><span class="kinetic-inner">SEU JOGO MERECE UM</span></span>
+            <span class="kinetic-line"><span class="kinetic-inner"><span class="title-green">TRAILER</span> QUE O JOGADOR</span></span>
+            <span class="kinetic-line"><span class="kinetic-inner"><span class="title-yellow">DÊ PLAY.</span></span></span>
+          </h1>
+
+          <!-- Mascote Dino Visível no Mobile na 1ª Dobra -->
+          <div class="hero-mascot-mobile">
+            <div class="dino-floating-wrapper-mobile" id="dino-mascot-mobile-wrapper" title="Toque no Dino Rex!">
+              <div class="dino-speech-bubble mobile" id="dino-speech-bubble-mobile" aria-live="polite">
+                <span class="speech-text">ROAR! Bora pra Steam! 🦖</span>
+                <span class="speech-tail"></span>
+              </div>
+              <span class="hero-mascot-sticker-mobile">PLAYER ONE: DINO REX</span>
+              <img src="assets/img/dino-gaming-tv.svg?v=8" alt="Mascote Dino Rex Jogando em TV Retrô de Papel" class="dino-mascot-img-mobile" width="340" height="290">
+            </div>
+          </div>
+
+          <p class="hero-description">
+            Transformamos gameplay cru em trailers cinematográficos, criativos verticais de alta retenção e identidades dinâmicas que impulsionam suas <strong>wishlists na Steam</strong>.
+          </p>
+          <div class="hero-actions">
+            <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-lg btn-green btn-magnetic">
+              <span class="btn-shadow"></span>
+              <span class="btn-face">Chamar no WhatsApp</span>
+            </a>
+            <a href="#servicos" class="btn-tactile btn-lg btn-white btn-magnetic">
+              <span class="btn-shadow"></span>
+              <span class="btn-face">Ver Trailers</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Mascote Dino Livre (Sem Caixa / Com Doodles) -->
+        <div class="hero-mascot-container">
+          <!-- Seta Manual desenhada à mão -->
+          <img src="assets/img/d-arrow.svg" alt="" class="hero-arrow-doodle" aria-hidden="true" width="120" height="100">
+          
+          <div class="dino-floating-wrapper" id="dino-mascot-wrapper" title="Clique no Dino Rex!">
+            <!-- Balão de Fala Interativo (RPG Quote) -->
+            <div class="dino-speech-bubble" id="dino-speech-bubble" aria-live="polite">
+              <span class="speech-text">ROAR! Bora transformar gameplay em Wishlists? 🎮</span>
+              <span class="speech-tail"></span>
+            </div>
+            <span class="hero-mascot-tag">READY PLAYER ONE!</span>
+            <img src="assets/img/dino-gaming-tv.svg?v=8" alt="Mascote Dino Rex Jogando em TV Retrô de Papel" class="dino-mascot-img" width="560" height="480">
+            <span class="hero-mascot-sticker">PLAYER ONE: DINO REX</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER INFINITO (MARQUEE) -->
+    <div class="ticker-section" aria-hidden="true">
+      <div class="ticker-track">
+        <div class="ticker-item">GAME TRAILERS <span class="ticker-dot">✦</span></div>
+        <div class="ticker-item">INDIE GAMES <span class="ticker-dot">✦</span></div>
+        <div class="ticker-item">MOTION DESIGN <span class="ticker-dot">✦</span></div>
+        <div class="ticker-item">60 FPS CRAFT <span class="ticker-dot">✦</span></div>
+        <div class="ticker-item">STEAM WISHLISTS <span class="ticker-dot">✦</span></div>
+        <div class="ticker-item">LEVEL UP YOUR GAME <span class="ticker-dot">✦</span></div>
+        <!-- Loop contínuo -->
+        <div class="ticker-item">GAME TRAILERS <span class="ticker-dot">✦</span></div>
+        <div class="ticker-item">INDIE GAMES <span class="ticker-dot">✦</span></div>
+        <div class="ticker-item">MOTION DESIGN <span class="ticker-dot">✦</span></div>
+        <div class="ticker-item">60 FPS CRAFT <span class="ticker-dot">✦</span></div>
+        <div class="ticker-item">STEAM WISHLISTS <span class="ticker-dot">✦</span></div>
+        <div class="ticker-item">LEVEL UP YOUR GAME <span class="ticker-dot">✦</span></div>
+      </div>
+    </div>
+
+    <!-- SOBRE O ESTÚDIO (COM POLAROID PESSOAL & CONTADORES) -->
+    <section id="sobre" class="about-section">
+      <div class="container">
+        <div class="about-card motion-reveal">
+          <!-- Polaroid Humana com Washi Tape e Selo Postal -->
+          <div class="about-portrait-wrap">
+            <img src="assets/img/dino-profile.svg?v=8" alt="Lucas Dino - Fundador e Motion Designer" class="about-polaroid" width="300" height="360">
+          </div>
+
+          <div class="about-info">
+            <span class="about-badge">QUEM ESTÁ NO CONTROLE?</span>
+            <h2 class="about-title">SOMOS APAIXONADOS POR <span class="brush-highlight">GAMES E MOTION DESIGN</span>.</h2>
+            <p class="about-text">
+              Conheça o personagem Dino, criado para este estudo de interface. Sabemos exatamente como dói passar 2 anos programando um jogo indie incrível e, no lançamento, o trailer ficar sem ritmo, sem impacto sonoro e sem reter o público na Steam.
+            </p>
+            <p class="about-text">
+              Aqui na DinoMotion entramos como co-pilotos do seu lançamento: criamos ritmo cinematográfico, cortes dramáticos no compasso da trilha e animações de alta fidelidade que fazem a comunidade querer jogar.
+            </p>
+            <div class="about-tags">
+              <span class="tag-pill">After Effects</span>
+              <span class="tag-pill">Blender 3D</span>
+              <span class="tag-pill">Unreal Engine</span>
+              <span class="tag-pill">Premiere Pro</span>
+              <span class="tag-pill">GarageBand SFX</span>
+            </div>
+
+            <!-- Contadores Numéricos -->
+            <div class="counters-grid">
+              <div class="counter-box box-1">
+                <div class="counter-num">PLAY</div>
+                <div class="counter-label">Trailers de games</div>
+              </div>
+              <div class="counter-box box-2">
+                <div class="counter-num">FX</div>
+                <div class="counter-label">Design em movimento</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVIÇOS & TRAILERS DE GAMES AUTÊNTICOS -->
+    <section id="servicos" class="services-section">
+      <div class="container">
+        <div class="section-header motion-reveal">
+          <span class="section-badge">NOSSOS SERVIÇOS</span>
+          <h2 class="section-title">ESCOLHA A <span class="brush-highlight">MISSÃO</span> DO SEU PROJETO</h2>
+        </div>
+
+        <!-- 3 Abas em Relevo -->
+        <div class="tabs-nav" role="tablist">
+          <button class="tab-btn tab-saas active" role="tab" aria-selected="true" data-tab="tab-content-trailers">
+            <div class="tab-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+            </div>
+            <div class="tab-name">Game Trailers</div>
+          </button>
+          <button class="tab-btn tab-criativos" role="tab" aria-selected="false" data-tab="tab-content-ads">
+            <div class="tab-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>
+            </div>
+            <div class="tab-name">Ads & Criativos</div>
+          </button>
+          <button class="tab-btn tab-identidade" role="tab" aria-selected="false" data-tab="tab-content-ui">
+            <div class="tab-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.2h7.6l-6 4.8 2.4 7.2-6.4-4.8-6.4 4.8 2.4-7.2-6-4.8h7.6z"/></svg>
+            </div>
+            <div class="tab-name">Motion UI & Overlays</div>
+          </button>
+        </div>
+
+        <!-- Painel Dinâmico que muda de cor -->
+        <div class="services-panel" id="services-panel">
+          <div class="panel-triangle" id="panel-triangle"></div>
+
+          <!-- Aba 1: Game Trailers -->
+          <div class="tab-content active" id="tab-content-trailers" role="tabpanel">
+            <div class="tab-info">
+              <div class="tab-info-text">
+                <h3>Trailers Cinematográficos de Gameplay (Steam & Consoles)</h3>
+                <p>Montagem dramática, sincronia precisa com a trilha sonora e narrativa épica para sua página da Steam.</p>
+              </div>
+              <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-sm btn-white">
+                <span class="btn-shadow"></span>
+                <span class="btn-face">Orçar Trailer</span>
+              </a>
+            </div>
+
+            <div class="genre-filter-bar" role="group" aria-label="Filtrar trailers por gênero de jogo">
+              <button class="genre-tag active" data-filter="all">TODOS OS GÊNEROS</button>
+              <button class="genre-tag" data-filter="cyberpunk">CYBERPUNK</button>
+              <button class="genre-tag" data-filter="metroidvania">METROIDVANIA</button>
+              <button class="genre-tag" data-filter="bullethell">BULLET HELL</button>
+              <button class="genre-tag" data-filter="party">CO-OP / PARTY</button>
+            </div>
+
+            <div class="video-grid">
+              <!-- Video 1 -->
+              <div class="video-card motion-card motion-reveal" data-genre="cyberpunk" data-title="NEON RUSH · CYBERPUNK 2088" data-video="assets/video/game-neon-rush.mp4" data-tag="STEAM TRAILER 4K" title="Clique para expandir o trailer">
+                <div class="video-game-overlay">
+                  <span class="game-title-badge">NEON RUSH · CYBERPUNK 2088</span>
+                  <span class="game-steam-badge">STEAM TRAILER</span>
+                  <span class="game-expand-hint" aria-hidden="true">EXPANDIR ⤢</span>
+                </div>
+                <video src="assets/video/game-neon-rush.mp4" poster="assets/video/poster-neon-rush.jpg" autoplay loop muted playsinline></video>
+                <button class="btn-sound" title="Ligar/Desligar Som" aria-label="Ligar ou desligar som"></button>
+              </div>
+
+              <!-- Video 2 -->
+              <div class="video-card motion-card motion-reveal" data-genre="metroidvania" data-title="CHRONO DUNGEON · METROIDVANIA" data-video="assets/video/game-chrono-dungeon.mp4" data-tag="GAMEPLAY TEASER" title="Clique para expandir o trailer">
+                <div class="video-game-overlay">
+                  <span class="game-title-badge">CHRONO DUNGEON · METROIDVANIA</span>
+                  <span class="game-steam-badge">GAMEPLAY TEASER</span>
+                  <span class="game-expand-hint" aria-hidden="true">EXPANDIR ⤢</span>
+                </div>
+                <video src="assets/video/game-chrono-dungeon.mp4" poster="assets/video/poster-chrono-dungeon.jpg" autoplay loop muted playsinline></video>
+                <button class="btn-sound" title="Ligar/Desligar Som" aria-label="Ligar ou desligar som"></button>
+              </div>
+
+              <!-- Video 3 -->
+              <div class="video-card motion-card motion-reveal" data-genre="bullethell" data-title="ASTRO SURVIVOR · BULLET HELL" data-video="assets/video/game-astro-survivor.mp4" data-tag="WISHLIST BOOST" title="Clique para expandir o trailer">
+                <div class="video-game-overlay">
+                  <span class="game-title-badge">ASTRO SURVIVOR · BULLET HELL</span>
+                  <span class="game-steam-badge">WISHLIST BOOST</span>
+                  <span class="game-expand-hint" aria-hidden="true">EXPANDIR ⤢</span>
+                </div>
+                <video src="assets/video/game-astro-survivor.mp4" poster="assets/video/poster-astro-survivor.jpg" autoplay loop muted playsinline></video>
+                <button class="btn-sound" title="Ligar/Desligar Som" aria-label="Ligar ou desligar som"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aba 2: Criativos & Ads -->
+          <div class="tab-content" id="tab-content-ads" role="tabpanel">
+            <div class="tab-info">
+              <div class="tab-info-text">
+                <h3>Criativos de Alta Retenção (9:16 Vertical)</h3>
+                <p>Vídeos pensados para TikTok, Reels e YouTube Shorts que transformam cliques em novos jogadores.</p>
+              </div>
+              <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-sm btn-white">
+                <span class="btn-shadow"></span>
+                <span class="btn-face">Orçar Criativos</span>
+              </a>
+            </div>
+
+            <div class="video-grid">
+              <!-- Video 4 -->
+              <div class="video-card motion-card motion-reveal" data-genre="cyberpunk" data-title="SHADOW BLADE · TIKTOK HOOK" data-video="assets/video/game-shadow-blade.mp4" data-tag="VIRAL 2.4M" title="Clique para expandir o trailer">
+                <div class="video-game-overlay">
+                  <span class="game-title-badge">SHADOW BLADE · TIKTOK HOOK</span>
+                  <span class="game-steam-badge">VIRAL 2.4M</span>
+                  <span class="game-expand-hint" aria-hidden="true">EXPANDIR ⤢</span>
+                </div>
+                <video src="assets/video/game-shadow-blade.mp4" poster="assets/video/poster-shadow-blade.jpg" loop muted playsinline></video>
+                <button class="btn-sound" title="Ligar/Desligar Som" aria-label="Ligar ou desligar som"></button>
+              </div>
+
+              <!-- Video 5 -->
+              <div class="video-card motion-card motion-reveal" data-genre="party" data-title="PIXEL TACO PARTY · META ADS" data-video="assets/video/game-pixel-taco.mp4" data-tag="ROAS 4.8X" title="Clique para expandir o trailer">
+                <div class="video-game-overlay">
+                  <span class="game-title-badge">PIXEL TACO PARTY · META ADS</span>
+                  <span class="game-steam-badge">ROAS 4.8X</span>
+                  <span class="game-expand-hint" aria-hidden="true">EXPANDIR ⤢</span>
+                </div>
+                <video src="assets/video/game-pixel-taco.mp4" poster="assets/video/poster-pixel-taco.jpg" loop muted playsinline></video>
+                <button class="btn-sound" title="Ligar/Desligar Som" aria-label="Ligar ou desligar som"></button>
+              </div>
+
+              <!-- Video 6 -->
+              <div class="video-card motion-card motion-reveal" data-genre="bullethell" data-title="VOID RUNNER · STEAM UPDATE" data-video="assets/video/game-void-runner.mp4" data-tag="PATCH 1.4" title="Clique para expandir o trailer">
+                <div class="video-game-overlay">
+                  <span class="game-title-badge">VOID RUNNER · STEAM UPDATE</span>
+                  <span class="game-steam-badge">PATCH 1.4</span>
+                  <span class="game-expand-hint" aria-hidden="true">EXPANDIR ⤢</span>
+                </div>
+                <video src="assets/video/game-void-runner.mp4" poster="assets/video/poster-void-runner.jpg" loop muted playsinline></video>
+                <button class="btn-sound" title="Ligar/Desligar Som" aria-label="Ligar ou desligar som"></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Aba 3: Motion UI & Overlays -->
+          <div class="tab-content" id="tab-content-ui" role="tabpanel">
+            <div class="tab-info">
+              <div class="tab-info-text">
+                <h3>Identidade Gamer & Overlays Dinâmicos</h3>
+                <p>Vinhetas de estúdio, animações de logo, HUDs e telas de vitória estilizadas.</p>
+              </div>
+              <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-sm btn-white">
+                <span class="btn-shadow"></span>
+                <span class="btn-face">Orçar Identidade</span>
+              </a>
+            </div>
+
+            <div class="video-grid">
+              <div class="video-card motion-card motion-reveal" data-genre="all" data-title="RETRO WAVE INDIE · LOGO REVEAL" data-video="assets/video/game-studio-intro.mp4" data-tag="STUDIO INTRO" title="Clique para expandir o trailer">
+                <div class="video-game-overlay">
+                  <span class="game-title-badge">RETRO WAVE INDIE · LOGO REVEAL</span>
+                  <span class="game-steam-badge">STUDIO INTRO</span>
+                  <span class="game-expand-hint" aria-hidden="true">EXPANDIR ⤢</span>
+                </div>
+                <video src="assets/video/game-studio-intro.mp4" poster="assets/video/poster-studio-intro.jpg" loop muted playsinline></video>
+                <button class="btn-sound" title="Ligar/Desligar Som" aria-label="Ligar ou desligar som"></button>
+              </div>
+              <div class="video-card motion-card motion-reveal" data-genre="cyberpunk" data-title="CYBER SHIELD · UNREAL HUD" data-video="assets/video/game-cyber-hud.mp4" data-tag="UI MOTION" title="Clique para expandir o trailer">
+                <div class="video-game-overlay">
+                  <span class="game-title-badge">CYBER SHIELD · UNREAL HUD</span>
+                  <span class="game-steam-badge">UI MOTION</span>
+                  <span class="game-expand-hint" aria-hidden="true">EXPANDIR ⤢</span>
+                </div>
+                <video src="assets/video/game-cyber-hud.mp4" poster="assets/video/poster-cyber-hud.jpg" loop muted playsinline></video>
+                <button class="btn-sound" title="Ligar/Desligar Som" aria-label="Ligar ou desligar som"></button>
+              </div>
+              <div class="video-card motion-card motion-reveal" data-genre="party" data-title="VICTORY SCREEN · STREAM STINGER" data-video="assets/video/game-victory-stinger.mp4" data-tag="TRANSITION" title="Clique para expandir o trailer">
+                <div class="video-game-overlay">
+                  <span class="game-title-badge">VICTORY SCREEN · STREAM STINGER</span>
+                  <span class="game-steam-badge">TRANSITION</span>
+                  <span class="game-expand-hint" aria-hidden="true">EXPANDIR ⤢</span>
+                </div>
+                <video src="assets/video/game-victory-stinger.mp4" poster="assets/video/poster-victory-stinger.jpg" loop muted playsinline></video>
+                <button class="btn-sound" title="Ligar/Desligar Som" aria-label="Ligar ou desligar som"></button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTOS & PACKS (MOCKUPS 3D DE CAIXAS COLECIONÁVEIS) -->
+    <section id="produtos" class="products-section">
+      <div class="container">
+        <div class="section-header motion-reveal">
+          <span class="section-badge">BIG BOX ASSETS & PLUGINS</span>
+          <h2 class="section-title">TURBINE SUA <span class="brush-highlight">PRODUÇÃO</span></h2>
+        </div>
+
+        <div class="products-grid">
+          <!-- Box 1 -->
+          <div class="product-box-card motion-card motion-reveal">
+            <div class="prod-box-art">
+              <img src="assets/img/game-box-sfx.svg" alt="Big Box do Dino SFX Pack" width="240" height="220">
+            </div>
+            <h3 class="prod-title">Dino Game SFX Pack</h3>
+            <p class="prod-desc">
+              Mais de 150 efeitos sonoros masterizados para trailers: hits dramáticos, explosões, wooshes e sons de UI.
+            </p>
+            <div class="prod-price">R$ 97 <span>/ pack</span></div>
+            <div class="prod-actions" style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+              <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-green" aria-label="Comprar Dino Game SFX Pack">
+                <span class="btn-shadow"></span>
+                <span class="btn-face">QUERO ESSE</span>
+              </a>
+              <a href="produtos.html#sfx-pack" class="btn-tactile btn-sm btn-white" aria-label="Ver detalhes e áudios do Dino SFX Pack">
+                <span class="btn-shadow"></span>
+                <span class="btn-face">Ouvir Prévias de Áudio ➔</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Box 2 (Destaque) -->
+          <div class="product-box-card featured motion-card motion-reveal">
+            <span class="badge-featured">MAIS VENDIDO</span>
+            <div class="prod-box-art">
+              <img src="assets/img/game-box-combo.svg" alt="Big Box do Indie Launch Combo" width="240" height="220">
+            </div>
+            <h3 class="prod-title">Indie Launch Combo</h3>
+            <p class="prod-desc">
+              O pack completo de SFX + 10 templates de logo reveal e lower thirds prontos para After Effects.
+            </p>
+            <div class="prod-price">R$ 197 <span>/ combo</span></div>
+            <div class="prod-actions" style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+              <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-coral" aria-label="Comprar Indie Launch Combo">
+                <span class="btn-shadow"></span>
+                <span class="btn-face">QUERO ESSE</span>
+              </a>
+              <a href="produtos.html#launch-combo" class="btn-tactile btn-sm btn-white" aria-label="Ver detalhes e conteúdo do Indie Launch Combo">
+                <span class="btn-shadow"></span>
+                <span class="btn-face">Ver Templates e Itens ➔</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Box 3 -->
+          <div class="product-box-card motion-card motion-reveal">
+            <div class="prod-box-art">
+              <img src="assets/img/game-box-hud.svg" alt="Big Box do Streamer HUD Kit" width="240" height="220">
+            </div>
+            <h3 class="prod-title">Streamer HUD Kit</h3>
+            <p class="prod-desc">
+              Overlays animados, alertas com som e transições stinger exclusivas para streamers e criadores.
+            </p>
+            <div class="prod-price">R$ 147 <span>/ em breve</span></div>
+            <div class="prod-actions" style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+              <button class="btn-tactile btn-white" disabled style="opacity: 0.6; cursor: not-allowed;" aria-label="Produto em breve">
+                <span class="btn-shadow"></span>
+                <span class="btn-face">EM BREVE</span>
+              </button>
+              <a href="produtos.html#streamer-kit" class="btn-tactile btn-sm btn-white" aria-label="Ver prévia dos overlays e telas">
+                <span class="btn-shadow"></span>
+                <span class="btn-face">Ver Overlays e Telas ➔</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Callout Banner para a página de Produtos -->
+        <div class="products-catalog-callout motion-reveal" style="text-align: center; margin-top: 40px; padding: 24px; background: #ffffff; border: 3px solid #111111; border-radius: 16px; box-shadow: 6px 6px 0 #111111;">
+          <h4 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 8px;">Deseja conferir a lista completa de arquivos e ouvir as faixas?</h4>
+          <p style="color: #4b5563; font-size: 0.95rem; margin-bottom: 18px; max-width: 640px; margin-left: auto; margin-right: auto;">
+            Acesse nossa página exclusiva de produtos com audição de áudio em tempo real, especificações técnicas de WAV/MP3 e garantias.
+          </p>
+          <a href="produtos.html" class="btn-tactile btn-lg btn-yellow">
+            <span class="btn-shadow"></span>
+            <span class="btn-face">Abrir Catálogo Completo com Players de Áudio ➔</span>
+          </a>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="contato" class="cta-section">
+      <div class="container">
+        <div class="cta-box motion-reveal">
+          <h2 class="cta-title">BORA COLOCAR SEU JOGO NO <span class="brush-highlight">MAPA</span>?</h2>
+          <p class="cta-sub">
+            Me chame no WhatsApp e mostre a gameplay do seu jogo. Montamos um roteiro e proposta de trailer personalizada para seu estúdio.
+          </p>
+          <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-lg btn-green btn-magnetic" aria-label="Iniciar conversa no WhatsApp">
+            <span class="btn-shadow"></span>
+            <span class="btn-face">Chamar no WhatsApp Agora</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- RODAPÉ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        DINOMOTION STUDIO
+      </div>
+      <div class="footer-copy">
+        © 2026 DinoMotion Studio · Feito com paixão por games e animação.
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="social-link" title="Instagram" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="social-link" title="YouTube" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="#" class="social-link" title="WhatsApp" aria-label="WhatsApp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.275.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ARCADE CRT MODAL LIGHTBOX PARA TRAILERS -->
+  <div class="arcade-modal" id="arcade-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="arcade-modal-backdrop" id="arcade-modal-backdrop"></div>
+    <div class="arcade-modal-box">
+      <div class="arcade-bezel-header">
+        <div class="arcade-bezel-dots">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <span class="arcade-bezel-title" id="modal-game-title">NEON RUSH · CYBERPUNK 2088</span>
+        <button class="arcade-modal-close" id="arcade-modal-close" aria-label="Fechar trailer">✕</button>
+      </div>
+      
+      <div class="arcade-screen-container">
+        <div class="arcade-scanlines" aria-hidden="true"></div>
+        <video id="modal-video" src="" controls playsinline></video>
+      </div>
+
+      <div class="arcade-modal-footer">
+        <div class="modal-game-info">
+          <span class="modal-badge-steam" id="modal-game-tag">STEAM WISHLIST READY</span>
+          <span class="modal-engine-tag">60 FPS · 4K MASTER</span>
+        </div>
+        <a id="modal-cta-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-tactile btn-sm btn-green" aria-label="Orçar trailer para este jogo no WhatsApp">
+          <span class="btn-shadow"></span>
+          <span class="btn-face">Orçar Trailer Deste Jogo</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOCK FLUTUANTE DE SOM AMBIENTE (RETRO CASSETTE DOCK) -->
+  <aside class="floating-sound-dock" aria-label="Controle de Som Ambiente">
+    <button class="btn-bgm-toggle floating-btn" title="Ligar / Desligar Som Ambiente Gamer" aria-label="Ligar ou desligar música ambiente">
+      <span class="bgm-equalizer" aria-hidden="true">
+        <span class="bar b1"></span>
+        <span class="bar b2"></span>
+        <span class="bar b3"></span>
+      </span>
+      <span class="bgm-label">SOM AMBIENTE: OFF</span>
+    </button>
+  </aside>
+
+  <script src="app.js?v=9"></script>
+<aside class="study-notice" aria-label="Projeto demonstrativo"><span>Estudo de interface • demonstração</span><a href="#study-details">Sobre o projeto</a></aside>
+<dialog class="study-dialog" id="study-details" aria-labelledby="study-title"><h2 id="study-title">Um estudo do UNIVERSO STUDIO</h2><p>DinoMotion é um estudo de identidade e interface. Personagem, catálogo, preços e ofertas são demonstrativos. Não há venda, cobrança, entrega de produtos ou contratação por este site.</p><p>Este site demonstra design, movimento e interação do projeto original.</p><p><a href="https://www.instagram.com/universostudioofficial/" target="_blank" rel="noopener noreferrer">Conhecer o UNIVERSO STUDIO</a></p><button type="button">Voltar ao site</button></dialog>
+<script src="study.js"></script>
+</body>
+</html>

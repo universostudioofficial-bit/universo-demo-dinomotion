@@ -1,0 +1,354 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 620" width="100%" height="100%" fill="none">
+  <!-- DINO REX GAMER ON RETRO CRT TV - PAPERCRAFT / BONECO DE PAPEL ANIMADO -->
+  <defs>
+    <!-- Sombra projetada de papel recortado pesado -->
+    <filter id="paper-cutout-shadow" x="-15%" y="-15%" width="135%" height="135%">
+      <feDropShadow dx="8" dy="12" stdDeviation="0" flood-color="#111111" flood-opacity="1" />
+    </filter>
+    <filter id="tv-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="screen-phosphor" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04 0.95" numOctaves="1" result="noise" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.06   0 0 0 0 0.72   0 0 0 0 0.5   0 0 0 0.18 0" />
+      <feBlend in="SourceGraphic" in2="noise" mode="screen" />
+    </filter>
+
+    <style>
+      /* Animações CSS internas de boneco de papel */
+      @keyframes dinoHeadBob {
+        0%, 100% { transform: rotate(0deg) translateY(0px); }
+        35% { transform: rotate(-2.5deg) translateY(-6px); }
+        70% { transform: rotate(2deg) translateY(3px); }
+      }
+      @keyframes dinoTailSway {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(6deg) translateY(-4px); }
+      }
+      @keyframes controllerMash {
+        0%, 100% { transform: rotate(-4deg) translateY(0px); }
+        25% { transform: rotate(-2deg) translateY(-3px); }
+        50% { transform: rotate(-5deg) translateY(2px); }
+        75% { transform: rotate(-3deg) translateY(-2px); }
+      }
+      @keyframes tvScreenPulse {
+        0%, 100% { opacity: 0.92; filter: drop-shadow(0 0 8px rgba(16, 185, 129, 0.4)); }
+        50% { opacity: 1; filter: drop-shadow(0 0 16px rgba(6, 182, 212, 0.6)); }
+      }
+      @keyframes pixelSpriteRun {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(25px) translateY(-8px); }
+        100% { transform: translateX(50px); }
+      }
+      @keyframes particleFloat1 {
+        0% { transform: translate(0, 0) scale(0.8); opacity: 0; }
+        30% { opacity: 1; }
+        100% { transform: translate(-30px, -60px) scale(1.1); opacity: 0; }
+      }
+      @keyframes particleFloat2 {
+        0% { transform: translate(0, 0) scale(0.7); opacity: 0; }
+        40% { opacity: 1; }
+        100% { transform: translate(25px, -70px) scale(1.2); opacity: 0; }
+      }
+
+      .anim-head {
+        transform-origin: 390px 240px;
+        animation: dinoHeadBob 1.9s ease-in-out infinite;
+      }
+      .anim-tail {
+        transform-origin: 220px 420px;
+        animation: dinoTailSway 2.8s ease-in-out infinite;
+      }
+      .anim-gamepad {
+        transform-origin: 340px 380px;
+        animation: controllerMash 0.28s ease-in-out infinite;
+      }
+      .anim-tv-screen {
+        animation: tvScreenPulse 2.4s ease-in-out infinite;
+      }
+      .anim-particle-1 {
+        animation: particleFloat1 3s ease-out infinite;
+      }
+      .anim-particle-2 {
+        animation: particleFloat2 3.6s ease-out infinite 1.2s;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .anim-head, .anim-tail, .anim-gamepad, .anim-tv-screen, .anim-particle-1, .anim-particle-2 {
+          animation: none !important;
+        }
+      }
+    </style>
+  </defs>
+
+  <!-- PISO / CHÃO DE PAPEL COM SOMBRA GERAL -->
+  <ellipse cx="380" cy="575" rx="310" ry="28" fill="#111111" opacity="0.14" />
+
+  <!-- ============================================================
+       1. TV DE TUBO RETRÔ CRT (NA ESQUERDA, VIRADA PARA O DINO)
+       ============================================================ -->
+  <g id="retro-crt-tv" filter="url(#paper-cutout-shadow)" transform="translate(40, 240)">
+    <!-- Antena em V com pontas de bolinha -->
+    <line x1="85" y1="20" x2="40" y2="-45" stroke="#111111" stroke-width="5" stroke-linecap="round" />
+    <circle cx="38" cy="-47" r="7" fill="#ff5436" stroke="#111111" stroke-width="3" />
+    <line x1="105" y1="20" x2="155" y2="-55" stroke="#111111" stroke-width="5" stroke-linecap="round" />
+    <circle cx="157" cy="-57" r="7" fill="#ff5436" stroke="#111111" stroke-width="3" />
+
+    <!-- Pés da TV Retrô -->
+    <rect x="35" y="270" width="30" height="24" rx="4" fill="#334155" stroke="#111111" stroke-width="4.5" />
+    <rect x="180" y="270" width="30" height="24" rx="4" fill="#334155" stroke="#111111" stroke-width="4.5" />
+
+    <!-- Gabinete da TV (Neo-brutalist Teal/Chunky Bezel) -->
+    <rect x="15" y="15" width="220" height="260" rx="24" fill="#0f172a" stroke="#111111" stroke-width="6" />
+    <!-- Borda frontal decorativa amarela retrô -->
+    <rect x="25" y="25" width="200" height="240" rx="18" fill="#1e293b" stroke="#111111" stroke-width="4" />
+
+    <!-- TELA CRT CONVEXA (COM SCANLINES E JOGO RETRÔ) -->
+    <g class="anim-tv-screen">
+      <!-- Fundo da Tela CRT -->
+      <rect x="36" y="38" width="138" height="150" rx="14" fill="#042f2e" stroke="#111111" stroke-width="5" />
+      <rect x="40" y="42" width="130" height="142" rx="10" fill="#064e3b" />
+
+      <!-- Scanlines horizontais na tela da TV -->
+      <line x1="40" y1="52" x2="170" y2="52" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="62" x2="170" y2="62" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="72" x2="170" y2="72" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="82" x2="170" y2="82" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="92" x2="170" y2="92" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="102" x2="170" y2="102" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="112" x2="170" y2="112" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="122" x2="170" y2="122" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="132" x2="170" y2="132" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="142" x2="170" y2="142" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="152" x2="170" y2="152" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="162" x2="170" y2="162" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+      <line x1="40" y1="172" x2="170" y2="172" stroke="#042f2e" stroke-width="2" opacity="0.6" />
+
+      <!-- Gráficos de Jogo 8-Bit na Tela -->
+      <!-- Chão quadriculado verde pixel -->
+      <rect x="40" y="150" width="130" height="34" fill="#10b981" />
+      <line x1="40" y1="150" x2="170" y2="150" stroke="#059669" stroke-width="3" />
+
+      <!-- Mini Dino Pixel saltando na tela -->
+      <g transform="translate(68, 126)">
+        <rect x="0" y="6" width="18" height="18" fill="#facc15" stroke="#111111" stroke-width="2" />
+        <rect x="4" y="0" width="16" height="12" fill="#facc15" stroke="#111111" stroke-width="2" />
+        <circle cx="14" cy="4" r="2" fill="#111111" />
+        <rect x="14" y="8" width="6" height="2" fill="#ffffff" />
+        <!-- Patinhas pixel -->
+        <rect x="4" y="24" width="4" height="6" fill="#111111" />
+        <rect x="12" y="24" width="4" height="6" fill="#111111" />
+      </g>
+
+      <!-- Moeda Pixel flutuando no jogo -->
+      <circle cx="120" cy="115" r="7" fill="#facc15" stroke="#111111" stroke-width="2" />
+      <text x="120" y="118" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="8" fill="#111111" text-anchor="middle">$</text>
+
+      <!-- Castelo / Chefão ao fundo -->
+      <rect x="135" y="132" width="28" height="20" fill="#ff5436" stroke="#111111" stroke-width="2" />
+      <polygon points="135,132 149,118 163,132" fill="#ef4444" stroke="#111111" stroke-width="2" />
+
+      <!-- Brilho de reflexo curvo na tela CRT -->
+      <path d="M 44 46 C 75 42 125 42 160 48 C 150 75 75 75 44 46 Z" fill="#ffffff" opacity="0.25" />
+    </g>
+
+    <!-- Painel de Controle Lateral da TV (Knobs e Autofalante) -->
+    <rect x="184" y="38" width="34" height="150" rx="8" fill="#0f172a" stroke="#111111" stroke-width="3.5" />
+    <!-- Botão Giratório de Canal 1 -->
+    <circle cx="201" cy="62" r="12" fill="#facc15" stroke="#111111" stroke-width="3" />
+    <line x1="201" y1="53" x2="201" y2="65" stroke="#111111" stroke-width="3" stroke-linecap="round" />
+    <!-- Botão Giratório de Volume 2 -->
+    <circle cx="201" cy="94" r="10" fill="#38bdf8" stroke="#111111" stroke-width="3" />
+    <line x1="201" y1="87" x2="206" y2="97" stroke="#111111" stroke-width="3" stroke-linecap="round" />
+    <!-- Grade do Alto-falante Retrô -->
+    <line x1="190" y1="120" x2="212" y2="120" stroke="#64748b" stroke-width="3" stroke-linecap="round" />
+    <line x1="190" y1="128" x2="212" y2="128" stroke="#64748b" stroke-width="3" stroke-linecap="round" />
+    <line x1="190" y1="136" x2="212" y2="136" stroke="#64748b" stroke-width="3" stroke-linecap="round" />
+    <line x1="190" y1="144" x2="212" y2="144" stroke="#64748b" stroke-width="3" stroke-linecap="round" />
+    <!-- Led indicador ligado (Vermelho neon) -->
+    <circle cx="201" cy="165" r="4" fill="#ef4444" stroke="#111111" stroke-width="2" />
+
+    <!-- CONSOLE RETRÔ DE VIDEOGAME SOB A TV COM CARTUCHO -->
+    <rect x="36" y="200" width="140" height="48" rx="8" fill="#334155" stroke="#111111" stroke-width="4.5" />
+    <rect x="48" y="212" width="50" height="8" rx="2" fill="#1e293b" />
+    <!-- Cartucho Inserido "DINOMOTION 64" -->
+    <rect x="65" y="188" width="44" height="24" rx="4" fill="#ff5436" stroke="#111111" stroke-width="3" />
+    <rect x="70" y="192" width="34" height="12" rx="2" fill="#facc15" />
+    <!-- Portas de controle -->
+    <rect x="130" y="222" width="16" height="12" rx="3" fill="#0f172a" stroke="#111111" stroke-width="2" />
+    <rect x="152" y="222" width="16" height="12" rx="3" fill="#0f172a" stroke="#111111" stroke-width="2" />
+
+    <!-- CABO ENCARACOLADO DO CONTROLE QUE VAI ATÉ O DINO -->
+    <path d="M 138 234 C 130 260 160 300 210 290 C 260 280 270 340 320 350 C 350 355 365 375 390 380" 
+          fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round" />
+  </g>
+
+  <!-- PARTÍCULAS / EFEITOS DE PIXEL SAINDO DA TV -->
+  <g class="anim-particle-1" transform="translate(180, 220)">
+    <rect x="0" y="0" width="12" height="12" fill="#facc15" stroke="#111111" stroke-width="2.5" transform="rotate(45)" />
+    <text x="18" y="4" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="12" fill="#10b981">+100</text>
+  </g>
+  <g class="anim-particle-2" transform="translate(230, 200)">
+    <!-- Coração Pixel de Vida Extra -->
+    <path d="M 0 4 A 4 4 0 0 1 8 4 A 4 4 0 0 1 16 4 Q 16 10 8 16 Q 0 10 0 4 Z" fill="#ff5436" stroke="#111111" stroke-width="2.5" />
+  </g>
+
+  <!-- ============================================================
+       2. DINO REX GAMER (BONECO DE PAPEL COM ARTICULAÇÕES E CONTROLE)
+       ============================================================ -->
+  <g id="dino-papercraft-gamer" filter="url(#paper-cutout-shadow)">
+
+    <!-- CAUDA ARTICULADA COM SWAY DE PAPEL -->
+    <g class="anim-tail">
+      <path d="M 230 460 C 180 500 120 540 85 520 C 70 500 100 440 190 395 Z" 
+            fill="#10b981" stroke="#111111" stroke-width="6.5" stroke-linejoin="round" />
+      <!-- Borda de adesivo recortado branco atrás -->
+      <!-- Espinhos dorsais na cauda -->
+      <polygon points="105,500 85,475 118,480" fill="#ff5436" stroke="#111111" stroke-width="5" stroke-linejoin="round" />
+      <polygon points="140,465 120,435 155,445" fill="#ff5436" stroke="#111111" stroke-width="5" stroke-linejoin="round" />
+      <polygon points="175,425 160,395 195,410" fill="#ff5436" stroke="#111111" stroke-width="5" stroke-linejoin="round" />
+
+      <!-- Rebite/Pino de articulação de papel no rabo -->
+      <circle cx="215" cy="425" r="6" fill="#facc15" stroke="#111111" stroke-width="2.5" />
+      <circle cx="215" cy="425" r="2" fill="#111111" />
+    </g>
+
+    <!-- ALMOFADA / PUFF ONDE O DINO ESTÁ SENTADO JOGANDO -->
+    <path d="M 220 500 C 220 480 300 470 420 470 C 530 470 570 490 570 535 C 570 570 510 580 400 580 C 290 580 220 560 220 500 Z" 
+          fill="#ff5436" stroke="#111111" stroke-width="6.5" />
+    <!-- Costura da Almofada Gamer -->
+    <path d="M 240 510 C 320 490 470 490 550 520" stroke="#facc15" stroke-width="4" stroke-dasharray="8 6" fill="none" />
+
+    <!-- PERNAS & PATAS DO DINO (RELAXADO NO PUFF) -->
+    <!-- Perna Traseira -->
+    <path d="M 260 480 C 250 535 240 555 270 565 C 295 565 310 540 310 490 Z" 
+          fill="#059669" stroke="#111111" stroke-width="6" />
+    <circle cx="270" cy="565" r="7" fill="#ffffff" stroke="#111111" stroke-width="3" />
+    <circle cx="288" cy="565" r="7" fill="#ffffff" stroke="#111111" stroke-width="3" />
+
+    <!-- Perna Dianteira dobrada curtindo o jogo -->
+    <path d="M 450 480 C 470 530 500 555 530 550 C 545 540 540 500 510 475 Z" 
+          fill="#10b981" stroke="#111111" stroke-width="6" />
+    <circle cx="510" cy="552" r="8" fill="#ffffff" stroke="#111111" stroke-width="3.5" />
+    <circle cx="528" cy="548" r="8" fill="#ffffff" stroke="#111111" stroke-width="3.5" />
+    <circle cx="544" cy="538" r="8" fill="#ffffff" stroke="#111111" stroke-width="3.5" />
+
+    <!-- CORPO PRINCIPAL DO DINO -->
+    <path d="M 240 360 C 230 450 270 525 380 525 C 475 525 500 450 490 350 C 480 300 450 260 395 250 C 310 240 250 280 240 360 Z" 
+          fill="#10b981" stroke="#111111" stroke-width="6.5" stroke-linejoin="round" />
+
+    <!-- Barriga Amarela Pastel em gomos -->
+    <path d="M 300 320 C 290 390 310 485 385 490 C 445 490 465 425 455 335 C 445 295 405 295 365 295 C 325 295 305 305 300 320 Z" 
+          fill="#fef08a" stroke="#111111" stroke-width="5.5" stroke-linejoin="round" />
+    <path d="M 330 365 Q 380 380 430 365" stroke="#d4b106" stroke-width="4" stroke-linecap="round" />
+    <path d="M 335 415 Q 380 430 425 415" stroke="#d4b106" stroke-width="4" stroke-linecap="round" />
+    <path d="M 345 460 Q 380 472 415 460" stroke="#d4b106" stroke-width="4" stroke-linecap="round" />
+
+    <!-- Espinhos nas Costas -->
+    <polygon points="245,290 215,265 248,260" fill="#ff5436" stroke="#111111" stroke-width="5" stroke-linejoin="round" />
+    <polygon points="260,230 230,200 268,200" fill="#ff5436" stroke="#111111" stroke-width="5" stroke-linejoin="round" />
+    <polygon points="285,170 255,140 295,145" fill="#ff5436" stroke="#111111" stroke-width="5" stroke-linejoin="round" />
+
+    <!-- CABEÇA DO DINO COM ANIMAÇÃO DE BOBBING -->
+    <g class="anim-head">
+      <!-- Base da Cabeça T-Rex -->
+      <path d="M 280 200 C 270 120 340 70 450 70 C 540 70 590 110 590 175 C 590 230 540 255 490 255 C 450 255 435 250 410 255 C 370 260 295 260 280 200 Z" 
+            fill="#10b981" stroke="#111111" stroke-width="6.5" stroke-linejoin="round" />
+
+      <!-- Narina -->
+      <ellipse cx="555" cy="140" rx="8" ry="11" fill="#065f46" stroke="#111111" stroke-width="3" transform="rotate(-15 555 140)" />
+
+      <!-- Dentes afiados triangulares brancos -->
+      <polygon points="530,220 540,238 550,220" fill="#ffffff" stroke="#111111" stroke-width="3.5" stroke-linejoin="round" />
+      <polygon points="505,222 515,240 525,222" fill="#ffffff" stroke="#111111" stroke-width="3.5" stroke-linejoin="round" />
+      <polygon points="480,224 490,239 500,224" fill="#ffffff" stroke="#111111" stroke-width="3.5" stroke-linejoin="round" />
+
+      <!-- Bochecha corada rosada (Expressão de Foco Gamer) -->
+      <ellipse cx="440" cy="210" rx="24" ry="14" fill="#ff80b0" opacity="0.85" />
+
+      <!-- OLHOS VIVOS COM PUPILA FOCADA NA TV -->
+      <!-- Olho Direito (Voltado para a TV na esquerda) -->
+      <circle cx="465" cy="145" r="44" fill="#ffffff" stroke="#111111" stroke-width="6" />
+      <!-- Pupila focando na TV (olhando para a esquerda com reflexo de luz verde da tela) -->
+      <g>
+        <circle cx="452" cy="145" r="24" fill="#111111" />
+        <circle cx="446" cy="135" r="9" fill="#00ffcc" />
+        <circle cx="458" cy="154" r="5" fill="#ffffff" />
+      </g>
+      <!-- Pálpebra para piscar -->
+      <path class="dino-eyelid-right" d="M 421 145 A 44 44 0 0 1 509 145 Z" fill="#10b981" stroke="#111111" stroke-width="5" style="transform-origin: 465px 145px; transform: scaleY(0); transition: transform 0.1s ease-in-out;" />
+
+      <!-- Olho Esquerdo (em perspectiva) -->
+      <circle cx="380" cy="130" r="36" fill="#ffffff" stroke="#111111" stroke-width="6" />
+      <g>
+        <circle cx="370" cy="130" r="19" fill="#111111" />
+        <circle cx="365" cy="122" r="7" fill="#00ffcc" />
+      </g>
+      <path class="dino-eyelid-left" d="M 344 130 A 36 36 0 0 1 416 130 Z" fill="#10b981" stroke="#111111" stroke-width="5" style="transform-origin: 380px 130px; transform: scaleY(0); transition: transform 0.1s ease-in-out;" />
+
+      <!-- HEADSET GAMER ROXO / CIANO -->
+      <path d="M 315 120 C 330 35 450 30 490 80" fill="none" stroke="#8b5cf6" stroke-width="22" stroke-linecap="round" />
+      <path d="M 315 120 C 330 35 450 30 490 80" fill="none" stroke="#111111" stroke-width="6" stroke-linecap="round" />
+      <path d="M 350 56 C 390 42 440 46 465 66" fill="none" stroke="#38bdf8" stroke-width="6" stroke-linecap="round" />
+
+      <!-- Concha Headset Esquerda -->
+      <rect x="305" y="95" width="30" height="54" rx="15" fill="#6d28d9" stroke="#111111" stroke-width="5" transform="rotate(-20 315 120)" />
+
+      <!-- Concha Headset Direita (com LED aceso) -->
+      <rect x="480" y="90" width="38" height="72" rx="19" fill="#8b5cf6" stroke="#111111" stroke-width="6" transform="rotate(15 498 124)" />
+      <ellipse cx="498" cy="124" rx="12" ry="22" fill="#a78bfa" stroke="#111111" stroke-width="4" transform="rotate(15 498 124)" />
+      <circle cx="498" cy="124" r="7" fill="#00ffcc" />
+
+      <!-- Haste do Microfone até a boca -->
+      <path d="M 505 145 Q 530 195 500 215" fill="none" stroke="#111111" stroke-width="5" stroke-linecap="round" />
+      <circle cx="496" cy="217" r="10" fill="#ff5436" stroke="#111111" stroke-width="4" />
+      <circle cx="496" cy="217" r="4" fill="#facc15" />
+    </g>
+
+    <!-- BRAÇOS E CONTROLE EM AÇÃO (BUTTON MASHING ANIMADO) -->
+    <g class="anim-gamepad">
+      <!-- Braço Esquerdo articulado segurando controle -->
+      <path d="M 300 340 C 320 380 340 390 360 385" fill="none" stroke="#059669" stroke-width="24" stroke-linecap="round" />
+      <path d="M 300 340 C 320 380 340 390 360 385" fill="none" stroke="#111111" stroke-width="6.5" stroke-linecap="round" />
+
+      <!-- O GAMEPAD ARCADE DE VERDADE -->
+      <g transform="translate(350, 345) rotate(-6)">
+        <!-- Carcaça do controle cinza escuro neo-brutalista -->
+        <rect x="0" y="0" width="145" height="82" rx="30" fill="#1f2937" stroke="#111111" stroke-width="6.5" />
+        <!-- Grips inferiores ergonômicos -->
+        <path d="M 18 72 L 28 92 L 52 86 L 40 72 Z" fill="#111827" stroke="#111111" stroke-width="4.5" />
+        <path d="M 125 72 L 115 92 L 91 86 L 103 72 Z" fill="#111827" stroke="#111111" stroke-width="4.5" />
+
+        <!-- D-PAD DIREÇÃO (EM CRUZ) -->
+        <path d="M 28 32 H 38 V 22 H 48 V 32 H 58 V 42 H 48 V 52 H 38 V 42 H 28 Z" fill="#9ca3af" stroke="#111111" stroke-width="3.5" stroke-linejoin="round" />
+
+        <!-- BOTÕES DE AÇÃO ABXY (COLORIDOS) -->
+        <circle cx="118" cy="28" r="7" fill="#ff5436" stroke="#111111" stroke-width="3" />
+        <circle cx="102" cy="40" r="7" fill="#10b981" stroke="#111111" stroke-width="3" />
+        <circle cx="130" cy="44" r="7" fill="#facc15" stroke="#111111" stroke-width="3" />
+        <circle cx="114" cy="56" r="7" fill="#06b6d4" stroke="#111111" stroke-width="3" />
+
+        <!-- Botões Centrais (Select / Start) -->
+        <rect x="68" y="38" width="14" height="5" rx="2.5" fill="#e5e7eb" stroke="#111111" stroke-width="2" />
+        <rect x="68" y="47" width="14" height="5" rx="2.5" fill="#e5e7eb" stroke="#111111" stroke-width="2" />
+      </g>
+
+      <!-- Braço Direito com garras mashing botões -->
+      <path d="M 470 330 C 490 360 480 400 450 410" fill="none" stroke="#10b981" stroke-width="26" stroke-linecap="round" />
+      <path d="M 470 330 C 490 360 480 400 450 410" fill="none" stroke="#111111" stroke-width="6.5" stroke-linecap="round" />
+      <!-- Garras brancas apertando o controle -->
+      <circle cx="442" cy="414" r="7" fill="#ffffff" stroke="#111111" stroke-width="3.5" />
+      <circle cx="456" cy="418" r="7" fill="#ffffff" stroke="#111111" stroke-width="3.5" />
+      <circle cx="470" cy="412" r="7" fill="#ffffff" stroke="#111111" stroke-width="3.5" />
+    </g>
+
+    <!-- Pinos / Rebites metálicos estilo boneco de papel articulado -->
+    <circle cx="305" cy="345" r="5" fill="#facc15" stroke="#111111" stroke-width="2" />
+    <circle cx="475" cy="335" r="5" fill="#facc15" stroke="#111111" stroke-width="2" />
+
+    <!-- Doodles de Gamer ao redor (Sparkles de papel) -->
+    <path d="M 550 80 L 556 62 L 562 80 L 580 86 L 562 92 L 556 110 L 550 92 L 532 86 Z" fill="#facc15" stroke="#111111" stroke-width="3.5" />
+    <path d="M 210 200 L 215 188 L 220 200 L 232 205 L 220 210 L 215 222 L 210 210 L 198 205 Z" fill="#38bdf8" stroke="#111111" stroke-width="3" />
+  </g>
+</svg>

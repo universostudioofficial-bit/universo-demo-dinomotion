@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 140" width="100%" height="100%" fill="none">
+  <!-- Hand-drawn curvy retro arrow with shadow -->
+  <path d="M 25 20 C 50 15 95 30 110 75 C 118 95 115 110 110 120" stroke="#111111" stroke-width="9" stroke-linecap="round" fill="none" transform="translate(4, 4)" opacity="0.3" />
+  <path d="M 25 20 C 50 15 95 30 110 75 C 118 95 115 110 110 120" stroke="#ff5436" stroke-width="8" stroke-linecap="round" fill="none" />
+  <!-- Arrow Head -->
+  <polygon points="110,120 90,105 105,95" fill="#111111" transform="translate(4, 4)" opacity="0.3" />
+  <polygon points="110,120 90,105 105,95" fill="#ff5436" stroke="#111111" stroke-width="4" stroke-linejoin="round" />
+  <polygon points="110,120 125,100 112,95" fill="#ff5436" stroke="#111111" stroke-width="4" stroke-linejoin="round" />
+</svg>

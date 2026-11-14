@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <title>Packs de Assets e Áudio para Jogos Indie — DinoMotion Studio</title>
+  <meta name="description" content="Conheça todos os detalhes do Dino Game SFX Pack, Indie Launch Combo e Streamer HUD Kit. Ouça prévias de áudio interativas, especificações técnicas e tire suas dúvidas.">
+  <link rel="canonical" href="./">
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="product">
+  
+  <meta property="og:title" content="Packs de Assets & Efeitos Sonoros para Trailers Indie — DinoMotion">
+  <meta property="og:description" content="Mais de 150 efeitos sonoros masterizados para trailers de games e templates After Effects. Ouça prévias interativas sem sair da página!">
+  
+
+  <!-- Schema.org JSON-LD -->
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-creme: #fdf6ea;
+      --ink: #111111;
+      --white: #ffffff;
+      --dino-green: #10b981;
+      --coral-neon: #ff5436;
+      --gamepad-purple: #8b5cf6;
+      --coin-yellow: #facc15;
+      --cyan-neon: #06b6d4;
+      --panel-active: var(--dino-green);
+    }
+  </style>
+  <link rel="stylesheet" href="style.css?v=9">
+<link rel="stylesheet" href="study.css">
+</head>
+<body class="loading">
+
+  <!-- Textura de Papel Físico Analógico -->
+  <div class="paper-overlay" aria-hidden="true"></div>
+
+  <!-- LOADER INICIAL RETRÔ ARCADE -->
+  <div id="loader" aria-hidden="true">
+    <img src="assets/img/dino-cloud.svg" class="ld-sky-cloud c1" width="160" height="90" alt="">
+    <img src="assets/img/dino-cloud-2.svg" class="ld-sky-cloud c2" width="200" height="110" alt="">
+    <img src="assets/img/dino-cloud-3.svg" class="ld-sky-cloud c3" width="140" height="80" alt="">
+
+    <div class="ld-box">
+      <span class="ld-badge">CATÁLOGO DE ASSETS · PRÉVIA DE ÁUDIO</span>
+      <div class="ld-title">DINOMOTION</div>
+      <p class="ld-tagline">Carregando samplers de áudio e caixas retrô...</p>
+      <div class="ld-progress-bar">
+        <div class="ld-progress-fill"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <!-- RETRO GAMER XP SCROLL PROGRESS HUD -->
+    <div class="scroll-hud-bar" id="scroll-hud" aria-hidden="true">
+      <div class="scroll-hud-inner">
+        <span class="scroll-hud-icon" aria-hidden="true">🦖</span>
+        <span class="scroll-hud-label">CATALOG XP:</span>
+        <div class="scroll-hud-track">
+          <div class="scroll-hud-fill" id="scroll-hud-fill"></div>
+          <span class="scroll-hud-pin" id="scroll-hud-pin" aria-hidden="true">🎧</span>
+        </div>
+        <span class="scroll-hud-pct" id="scroll-hud-pct">0%</span>
+      </div>
+    </div>
+
+    <div class="nav-inner">
+      <a href="index.html" class="brand-logo" aria-label="Voltar para a Página Inicial do DinoMotion">
+        <span class="brand-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 11l4-4 4 4M10 7v11M4 20h16"/></svg>
+        </span>
+        <span>DINOMOTION</span>
+      </a>
+      <nav aria-label="Navegação secundária de produtos">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">← Início</a></li>
+          <li><a href="#sfx-pack" class="nav-link">Dino SFX (150+)</a></li>
+          <li><a href="#launch-combo" class="nav-link">Launch Combo</a></li>
+          <li><a href="#streamer-kit" class="nav-link">Streamer HUD</a></li>
+          <li><a href="#licenca-faq" class="nav-link">Licença & FAQ</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button id="bgm-toggle" class="btn-bgm-toggle" title="Ligar / Desligar Som Ambiente Gamer" aria-label="Ligar ou desligar som ambiente">
+          <span class="bgm-equalizer" aria-hidden="true">
+            <span class="bar b1"></span>
+            <span class="bar b2"></span>
+            <span class="bar b3"></span>
+          </span>
+          <span class="bgm-label">SOM AMBIENTE: OFF</span>
+        </button>
+        <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-sm btn-green" aria-label="Tirar dúvidas no WhatsApp">
+          <span class="btn-shadow"></span>
+          <span class="btn-face">Dúvidas no Whats</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO DE PRODUTOS -->
+    <section class="products-hero">
+      <div class="container">
+        <div class="hero-badge motion-reveal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>
+          <span>BIG BOX RETRÔ · ARQUIVOS MASTERIZADOS</span>
+        </div>
+        <h1 class="hero-title kinetic-title motion-reveal">
+          <span class="kinetic-line"><span class="kinetic-inner">ASSETS FEITOS POR QUEM</span></span>
+          <span class="kinetic-line"><span class="kinetic-inner"><span class="title-green">FAZ TRAILER</span> NA PRÁTICA.</span></span>
+        </h1>
+        <p class="hero-description motion-reveal" style="max-width: 760px; margin: 0 auto 30px auto; text-align: center;">
+          Chega de perder horas procurando efeitos sonoros genéricos sem impacto ou pagando assinaturas abusivas. Nossos packs trazem tudo recortado, equalizado e nomeado no padrão da indústria para seu jogo se destacar na Steam.
+        </p>
+
+        <!-- Pílulas de Navegação Rápida -->
+        <div class="product-pills-nav motion-reveal">
+          <a href="#sfx-pack" class="pill-btn active">Dino Game SFX Pack (R$ 97)</a>
+          <a href="#launch-combo" class="pill-btn">Indie Launch Combo (R$ 197)</a>
+          <a href="#streamer-kit" class="pill-btn">Streamer HUD Kit (R$ 147)</a>
+          <a href="#licenca-faq" class="pill-btn">Licença Comercial & Garantia</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTO 1: DINO GAME SFX PACK -->
+    <section id="sfx-pack" class="product-detail-section">
+      <div class="container">
+        <div class="product-detail-card motion-card motion-reveal">
+          <div class="product-detail-header-grid">
+            <div class="product-mockup-wrap">
+              <img src="assets/img/game-box-sfx.svg" alt="Caixa do Dino Game SFX Pack" width="300" height="280">
+              <div class="product-format-badge">
+                <span>FORMATO: 24-bit 48kHz WAV + MP3</span>
+              </div>
+            </div>
+            <div class="product-main-info">
+              <div class="product-tag-row">
+                <span class="badge-featured" style="position: static; display: inline-block;">BEST SELLER</span>
+                <span class="badge-tech">150+ ARQUIVOS DE ÁUDIO</span>
+                <span class="badge-tech">UCS METADATA</span>
+              </div>
+              <h2 class="product-heading">Dino Game SFX Pack</h2>
+              <p class="product-summary">
+                A biblioteca de efeitos sonoros definitiva desenhada exclusivamente para dar impacto, soco e clareza a trailers de jogos indie, combates pixel art e interfaces de games.
+              </p>
+              <div class="product-price-box">
+                <div class="price-val">R$ 97 <span class="price-sub">pagamento único · acesso vitalício</span></div>
+                <div class="price-installments">ou 12x de R$ 9,68 no cartão</div>
+              </div>
+              <div class="product-cta-row">
+                <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-lg btn-green" aria-label="Comprar Dino Game SFX Pack via WhatsApp">
+                  <span class="btn-shadow"></span>
+                  <span class="btn-face">Comprar Dino SFX Agora ➔</span>
+                </a>
+                <a href="#licenca-faq" class="btn-tactile btn-lg btn-white">
+                  <span class="btn-shadow"></span>
+                  <span class="btn-face">Ver Licença Comercial</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SOUNDBOARD INTERATIVO COM SAMPLES REAIS -->
+          <div class="soundboard-container motion-reveal">
+            <div class="soundboard-header">
+              <div class="soundboard-title-group">
+                <svg class="soundboard-icon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>
+                <div>
+                  <h3 class="soundboard-title">Console de Teste de Áudio (Prévias Reais)</h3>
+                  <p class="soundboard-subtitle">Clique nos cards abaixo para ouvir amostras masterizadas do pacote sem sair da página!</p>
+                </div>
+              </div>
+              <div class="soundboard-indicator">
+                <span class="status-light live"></span>
+                <span>DSP ENGINE ONLINE</span>
+              </div>
+            </div>
+
+            <div class="soundboard-grid">
+              <!-- Sample 1 -->
+              <div class="sound-sample-card" data-sound="coin">
+                <div class="sound-card-header">
+                  <span class="sound-number">01</span>
+                  <span class="sound-category">RECOMPENSA / PICKUP</span>
+                </div>
+                <div class="sound-title">Coin & Gem Collect</div>
+                <div class="sound-meta">tiovanlley-moedas · 48kHz WAV</div>
+                <button class="sound-play-btn" data-key="coin" aria-label="Tocar efeito sonoro de Moeda e Recompensa">
+                  <span class="play-icon">▶</span>
+                  <span class="play-label">Ouvir Sample</span>
+                </button>
+              </div>
+
+              <!-- Sample 2 -->
+              <div class="sound-sample-card" data-sound="pop">
+                <div class="sound-card-header">
+                  <span class="sound-number">02</span>
+                  <span class="sound-category">UI & INTERFACE</span>
+                </div>
+                <div class="sound-title">Happy Pop & Menu Click</div>
+                <div class="sound-meta">floraphonic-pop · Snappy UI</div>
+                <button class="sound-play-btn" data-key="pop" aria-label="Tocar efeito sonoro de Clique de Menu">
+                  <span class="play-icon">▶</span>
+                  <span class="play-label">Ouvir Sample</span>
+                </button>
+              </div>
+
+              <!-- Sample 3 -->
+              <div class="sound-sample-card" data-sound="roar">
+                <div class="sound-card-header">
+                  <span class="sound-number">03</span>
+                  <span class="sound-category">CRIATURA / MONSTRO</span>
+                </div>
+                <div class="sound-title">Dino Rex Fierce Roar</div>
+                <div class="sound-meta">pwlpl-roar · Impacto Pesado</div>
+                <button class="sound-play-btn" data-key="roar" aria-label="Tocar efeito sonoro de Rugido de Criatura">
+                  <span class="play-icon">▶</span>
+                  <span class="play-label">Ouvir Sample</span>
+                </button>
+              </div>
+
+              <!-- Sample 4 -->
+              <div class="sound-sample-card" data-sound="whoosh">
+                <div class="sound-card-header">
+                  <span class="sound-number">04</span>
+                  <span class="sound-category">TRANSIÇÃO / DASH</span>
+                </div>
+                <div class="sound-title">Spaceship Whoosh & Cut</div>
+                <div class="sound-meta">dragon-studio · Cinematic Swoosh</div>
+                <button class="sound-play-btn" data-key="whoosh" aria-label="Tocar efeito sonoro de Whoosh de Transição">
+                  <span class="play-icon">▶</span>
+                  <span class="play-label">Ouvir Sample</span>
+                </button>
+              </div>
+
+              <!-- Sample 5 -->
+              <div class="sound-sample-card" data-sound="victory">
+                <div class="sound-card-header">
+                  <span class="sound-number">05</span>
+                  <span class="sound-category">FANFARRA / VITÓRIA</span>
+                </div>
+                <div class="sound-title">Victory Bell & Level Up</div>
+                <div class="sound-meta">emand_edroff · Triunfo Gamer</div>
+                <button class="sound-play-btn" data-key="victory" aria-label="Tocar efeito sonoro de Fanfarra de Vitória">
+                  <span class="play-icon">▶</span>
+                  <span class="play-label">Ouvir Sample</span>
+                </button>
+              </div>
+
+              <!-- Sample 6 -->
+              <div class="sound-sample-card" data-sound="tab">
+                <div class="sound-card-header">
+                  <span class="sound-number">06</span>
+                  <span class="sound-category">MENU & NAVEGAÇÃO</span>
+                </div>
+                <div class="sound-title">Multi-Pop Tab Switch</div>
+                <div class="sound-meta">floraphonic-multi · Clean Feedback</div>
+                <button class="sound-play-btn" data-key="tab" aria-label="Tocar efeito sonoro de Troca de Aba">
+                  <span class="play-icon">▶</span>
+                  <span class="play-label">Ouvir Sample</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- LISTA DETALHADA DE PASTAS E CONTEÚDO TÉCNICO -->
+          <div class="product-breakdown-details motion-reveal">
+            <h3 class="breakdown-title">O Que Vem Dentro da Pasta (150+ Áudios):</h3>
+            <div class="breakdown-grid">
+              <div class="breakdown-col">
+                <div class="breakdown-item">
+                  <div class="breakdown-badge">📁 01_UI_AND_MENUS</div>
+                  <h4>30+ Sons de Interface & Interação</h4>
+                  <p>Botões retrô, cliques táteis analógicos, seleções afirmativas, avisos de erro, switches e sliders. Prontos para inventários e menus da Steam.</p>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-badge">📁 02_WHOOSHES_AND_SWOOSHES</div>
+                  <h4>35+ Whooshes Cinematográficos</h4>
+                  <p>Cortes ultra-rápidos, dashes no vácuo, chicotadas de vento e transições de cena para sincronizar com cortes de trailer a 60 fps.</p>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-badge">📁 03_COMBAT_AND_IMPACTS</div>
+                  <h4>30+ Golpes, Socos e Explosões</h4>
+                  <p>Lâminas se chocando, socos com camadas de sub-grave (sub-drop), impactos mecânicos, explosões de canhão e destruição de blocos.</p>
+                </div>
+              </div>
+
+              <div class="breakdown-col">
+                <div class="breakdown-item">
+                  <div class="breakdown-badge">📁 04_CREATURES_AND_ROARS</div>
+                  <h4>20+ Rugidos e Vocais de Criaturas</h4>
+                  <p>Monstros, dinossauros ferozes, grunhidos de dano, risadas malignas de chefões e passos pesados em terreno de terra e metal.</p>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-badge">📁 05_REWARDS_AND_ITEMS</div>
+                  <h4>20+ Sinos de Recompensa & Itens</h4>
+                  <p>Coleta de moedas, abertura de baús dourados, desbloqueio de conquistas Steam, poções de vida e ativação de upgrades.</p>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-badge">📁 06_RISERS_AND_FANFARES</div>
+                  <h4>15+ Crescentes Dramáticos & Vitórias</h4>
+                  <p>Risers analógicos que criam tensão antes do clímax do trailer, drops de silêncio e fanfarras triunfais de vitória.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTO 2: INDIE LAUNCH COMBO -->
+    <section id="launch-combo" class="product-detail-section">
+      <div class="container">
+        <div class="product-detail-card featured motion-card motion-reveal">
+          <div class="product-detail-header-grid">
+            <div class="product-mockup-wrap">
+              <span class="badge-featured-combo">MAIS COMPLETO</span>
+              <img src="assets/img/game-box-combo.svg" alt="Caixa do Indie Launch Combo" width="300" height="280">
+              <div class="product-format-badge">
+                <span>AFTER EFFECTS + PREMIERE + SFX MASTER</span>
+              </div>
+            </div>
+            <div class="product-main-info">
+              <div class="product-tag-row">
+                <span class="badge-featured" style="position: static; display: inline-block;">COMBO 40% OFF</span>
+                <span class="badge-tech">10 TEMPLATES DE TRAILER</span>
+                <span class="badge-tech">SFX INCLUSO</span>
+              </div>
+              <h2 class="product-heading">Indie Launch Combo</h2>
+              <p class="product-summary">
+                O arsenal definitivo para estúdios independentes: além de todo o <strong>Dino Game SFX Pack (150+ sons)</strong>, você recebe 10 templates profissionais de trailer para After Effects e Premiere com animações prontas de cápsula Steam, reviews da imprensa e telas de gameplay.
+              </p>
+              <div class="product-price-box">
+                <div class="price-val">R$ 197 <span class="price-sub">de <strike>R$ 327</strike> · economia real de R$ 130</span></div>
+                <div class="price-installments">ou 12x de R$ 19,67 no cartão</div>
+              </div>
+              <div class="product-cta-row">
+                <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-lg btn-coral" aria-label="Comprar Indie Launch Combo via WhatsApp">
+                  <span class="btn-shadow"></span>
+                  <span class="btn-face">Garantir Combo Completo ➔</span>
+                </a>
+                <a href="#templates-list" class="btn-tactile btn-lg btn-white">
+                  <span class="btn-shadow"></span>
+                  <span class="btn-face">Ver Lista dos 10 Templates</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- LISTA DOS 10 TEMPLATES -->
+          <div id="templates-list" class="templates-showcase motion-reveal">
+            <h3 class="breakdown-title">10 Templates Prontos para Editar em Menos de 1 Hora:</h3>
+            <div class="templates-grid">
+              <div class="template-item">
+                <span class="tpl-num">01</span>
+                <h4>Steam Capsule 3D Reveal</h4>
+                <p>Animação de abertura com efeito de paralaxe que faz o card da sua página da Steam saltar aos olhos do jogador.</p>
+              </div>
+              <div class="template-item">
+                <span class="tpl-num">02</span>
+                <h4>Release Date Countdown</h4>
+                <p>Cartela cinematográfica de anúncio com números que giram estilo placar mecânico (flip-clock) revelando sua data de lançamento.</p>
+              </div>
+              <div class="template-item">
+                <span class="tpl-num">03</span>
+                <h4>Boss Battle Intro Smash</h4>
+                <p>Lettering gigante e agressivo para apresentação de chefões e inimigos com camera shake ajustável.</p>
+              </div>
+              <div class="template-item">
+                <span class="tpl-num">04</span>
+                <h4>Press Reviews & Accolades</h4>
+                <p>Molduras estilizadas com estrelas de pontuação e citações da imprensa gamer (IGN, Kotaku, PC Gamer, etc.).</p>
+              </div>
+              <div class="template-item">
+                <span class="tpl-num">05</span>
+                <h4>Gameplay Feature Highlights</h4>
+                <p>Badges dinâmicos laterais para pontuar as principais mecânicas: "Roguelite", "Co-op Online", "Procedural Dungeons".</p>
+              </div>
+              <div class="template-item">
+                <span class="tpl-num">06</span>
+                <h4>Kinetic Typography Smash</h4>
+                <p>Palavras que entram no ritmo exato do beat musical com efeito de distorção óptica e sombras projetadas.</p>
+              </div>
+              <div class="template-item">
+                <span class="tpl-num">07</span>
+                <h4>Split-Screen Character Roster</h4>
+                <p>Comparativo dinâmico de heróis, armas ou classes com barras de status retrô animadas.</p>
+              </div>
+              <div class="template-item">
+                <span class="tpl-num">08</span>
+                <h4>Fast Action Montages & Glitches</h4>
+                <p>Transições estroboscópicas e glitches controlados por keyframes para sequências rápidas de combate.</p>
+              </div>
+              <div class="template-item">
+                <span class="tpl-num">09</span>
+                <h4>Wishlist CTA End Card</h4>
+                <p>Tela final obrigatória para todo trailer com botão pulsante "Add to Steam Wishlist" e links de redes sociais.</p>
+              </div>
+              <div class="template-item">
+                <span class="tpl-num">10</span>
+                <h4>Retro Studio Logo Intro</h4>
+                <p>Vinheta de abertura com efeito CRT scanline para apresentar a marca do seu estúdio indie com autoridade.</p>
+              </div>
+            </div>
+
+            <!-- Bônus Inclusos no Combo -->
+            <div class="combo-bonus-box">
+              <div class="bonus-badge">BÔNUS EXCLUSIVOS</div>
+              <div class="bonus-grid">
+                <div class="bonus-card">
+                  <div class="bonus-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                  </div>
+                  <h4>Vídeo-Tutorial Passo a Passo (45 min)</h4>
+                  <p>Gravado por Lucas "Dino", ensinando como substituir textos, trocar a arte pelas suas capturas de gameplay e renderizar em 4K 60fps sem travar seu PC.</p>
+                </div>
+                <div class="bonus-card">
+                  <div class="bonus-icon" aria-hidden="true">
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                  </div>
+                  <h4>5 Trilhas Épicas Sem Copyright</h4>
+                  <p>Músicas completas produzidas em sintetizadores retrô e guitarras pesadas, prontas para monetização no YouTube sem risco de strikes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUTO 3: STREAMER HUD KIT -->
+    <section id="streamer-kit" class="product-detail-section">
+      <div class="container">
+        <div class="product-detail-card motion-card motion-reveal">
+          <div class="product-detail-header-grid">
+            <div class="product-mockup-wrap">
+              <img src="assets/img/game-box-hud.svg" alt="Caixa do Streamer HUD Kit" width="300" height="280">
+              <div class="product-format-badge">
+                <span>WEBM ALPHA + OBS/STREAMLABS READY</span>
+              </div>
+            </div>
+            <div class="product-main-info">
+              <div class="product-tag-row">
+                <span class="badge-featured" style="position: static; display: inline-block; background: #1f2937; color: #ffffff;">LANÇAMENTO EM BREVE</span>
+                <span class="badge-tech">LIVE STREAMING</span>
+                <span class="badge-tech">TRANSPARÊNCIA ALFA</span>
+              </div>
+              <h2 class="product-heading">Streamer HUD Kit</h2>
+              <p class="product-summary">
+                A identidade definitiva para criadores que transmitem indies na Twitch, YouTube e Kick: molduras de webcam com iluminação neon reativa, alertas animados com canal alfa e transições stinger com áudio sincronizado.
+              </p>
+              <div class="product-price-box">
+                <div class="price-val">R$ 147 <span class="price-sub">preço de pré-lançamento</span></div>
+                <div class="price-installments">30% de desconto para quem entrar na lista VIP</div>
+              </div>
+              <div class="product-cta-row">
+                <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-lg btn-yellow" aria-label="Entrar na lista VIP com desconto no WhatsApp">
+                  <span class="btn-shadow"></span>
+                  <span class="btn-face">Entrar na Lista VIP (30% OFF) ➔</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- O QUE ESTÁ SENDO PRODUZIDO -->
+          <div class="product-breakdown-details motion-reveal">
+            <h3 class="breakdown-title">O Que Está Incluído no Kit de Transmissão:</h3>
+            <div class="breakdown-grid">
+              <div class="breakdown-col">
+                <div class="breakdown-item">
+                  <div class="breakdown-badge">📺 MOLDURAS DE WEBCAM</div>
+                  <h4>Overlays 16:9 e 4:3 com LED Neon</h4>
+                  <p>Molduras limpas com suporte a barra de última sub, último follow e meta de bits customizável.</p>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-badge">⚡ ALERTAS ANIMADOS (.WEBM)</div>
+                  <h4>12 Alertas com Canal Alfa Transparente</h4>
+                  <p>Alertas de Novo Inscrito, Doação, Raid e Bits com animação e efeito sonoro já masterizados.</p>
+                </div>
+              </div>
+              <div class="breakdown-col">
+                <div class="breakdown-item">
+                  <div class="breakdown-badge">🎬 TELAS DE STREAMING</div>
+                  <h4>6 Telas de Transição e Espera</h4>
+                  <p>Starting Soon, Be Right Back, Stream Ending, Tela de Bate-Papo com o Chat e Offline.</p>
+                </div>
+                <div class="breakdown-item">
+                  <div class="breakdown-badge">🔄 STINGER TRANSITION</div>
+                  <h4>Transição de Cena de 1 Segundo</h4>
+                  <p>Corte de corte perfeito com áudio de whoosh sincronizado para alternar entre jogo e bate-papo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SEÇÃO COMPARATIVO & LICENÇA COMERCIAL & GARANTIA -->
+    <section id="licenca-faq" class="license-faq-section">
+      <div class="container">
+        <!-- Banner de Garantia Incondicional 7 Dias -->
+        <div class="guarantee-box motion-card motion-reveal">
+          <div class="guarantee-seal">
+            <span class="guarantee-badge-text">7 DIAS</span>
+            <span class="guarantee-badge-sub">GARANTIA CDC</span>
+          </div>
+          <div class="guarantee-text">
+            <h3>Risco Zero: 7 Dias de Garantia Incondicional</h3>
+            <p>
+              Baixe os arquivos, teste no seu projeto, ouça cada áudio no fone e aplique nos seus cortes de trailer. Se por qualquer motivo você achar que o pacote não agregou valor profissional ao seu jogo, basta nos mandar uma mensagem no WhatsApp dentro de 7 dias que devolveremos 100% do seu dinheiro, sem perguntas e sem enrolação.
+            </p>
+          </div>
+        </div>
+
+        <!-- Termos de Licença Comercial Simplificada -->
+        <div class="license-terms-card motion-reveal">
+          <span class="section-badge">TRANSPARÊNCIA TOTAL</span>
+          <h2 class="section-title">LICENÇA COMERCIAL <span class="brush-highlight">SEM PEGADINHAS</span></h2>
+          <p class="section-subtitle" style="margin-bottom: 24px;">Entenda exatamente onde e como você pode utilizar os assets DinoMotion:</p>
+
+          <div class="license-grid">
+            <div class="license-col allow">
+              <h4><span class="lic-icon" aria-hidden="true">✔</span> O QUE VOCÊ PODE FAZER:</h4>
+              <ul>
+                <li><strong>Jogos Comerciais e Gratuitos:</strong> Usar em qualquer jogo na Steam, Epic Games Store, consoles (Switch, PS5, Xbox) e mobile.</li>
+                <li><strong>Vídeos e Trailers:</strong> Usar em teasers, trailers de gameplay, devlogs e vídeos promocionais.</li>
+                <li><strong>Monetização no YouTube/Twitch:</strong> Nossos áudios são 100% royalty-free e livres de Content ID. Você nunca receberá strike de copyright.</li>
+                <li><strong>Múltiplos Projetos:</strong> Uma única compra permite usar os assets em quantos projetos você e seu estúdio produzirem.</li>
+                <li><strong>Edição e Manipulação:</strong> Cortar, aplicar efeitos, distorcer, acelerar ou desacelerar os áudios livremente.</li>
+              </ul>
+            </div>
+            <div class="license-col forbid">
+              <h4><span class="lic-icon" aria-hidden="true">✖</span> O QUE É ESTRITAMENTE PROIBIDO:</h4>
+              <ul>
+                <li><strong>Revenda Avulsa:</strong> Revender, redistribuir ou compartilhar os arquivos brutos de áudio ou projeto em fóruns, torrents ou packs de terceiros.</li>
+                <li><strong>Registro de Content ID:</strong> Você não pode registrar as faixas de música pura em plataformas de proteção de direitos autorais para reivindicar terceiros.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- PERGUNTAS FREQUENTES (FAQ ACCORDION) -->
+        <div class="faq-section motion-reveal">
+          <span class="section-badge">TIRE SUAS DÚVIDAS</span>
+          <h2 class="section-title">PERGUNTAS <span class="brush-highlight">FREQUENTES</span></h2>
+
+          <div class="faq-accordion" id="faq-accordion">
+            <details class="faq-item" open>
+              <summary class="faq-summary">
+                <span>1. Como recebo acesso aos arquivos após o pagamento?</span>
+                <span class="faq-arrow" aria-hidden="true">▾</span>
+              </summary>
+              <div class="faq-content">
+                <p>O envio é 100% digital e imediato. Assim que o pagamento (via PIX ou Cartão) é confirmado, você recebe o link de download direto no Google Drive e na sua caixa de entrada, com acesso vitalício para baixar quando quiser.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>2. Preciso ter conhecimento avançado em After Effects para usar os templates?</span>
+                <span class="faq-arrow" aria-hidden="true">▾</span>
+              </summary>
+              <div class="faq-content">
+                <p>Não! Todos os templates foram estruturados para nível iniciante/intermediário. Criamos caixas de substituição rápida ("Arraste seu Gameplay Aqui" e "Edite seu Texto Aqui"). Além disso, o Combo inclui um tutorial de 45 minutos explicando cada clique.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>3. Os efeitos sonoros funcionam no DaVinci Resolve e no Premiere Pro?</span>
+                <span class="faq-arrow" aria-hidden="true">▾</span>
+              </summary>
+              <div class="faq-content">
+                <p>Sim! Os áudios são fornecidos em formatos universais <strong>WAV 24-bit 48kHz</strong> e <strong>MP3 320kbps</strong>, compatíveis com DaVinci Resolve, Premiere Pro, Final Cut, CapCut, Blender, Unreal Engine, Unity e Godot.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>4. Vocês emitem Nota Fiscal para meu estúdio / CNPJ?</span>
+                <span class="faq-arrow" aria-hidden="true">▾</span>
+              </summary>
+              <div class="faq-content">
+                <p>Com certeza. Emitimos nota fiscal eletrônica de prestação de serviços / produtos digitais para pessoas físicas (CPF) e empresas (CNPJ). Basta informar seus dados no fechamento da compra.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>5. Se eu precisar de ajuda ou suporte técnico com os arquivos?</span>
+                <span class="faq-arrow" aria-hidden="true">▾</span>
+              </summary>
+              <div class="faq-content">
+                <p>Você tem suporte direto pelo nosso canal oficial de WhatsApp e e-mail. Caso tenha qualquer dificuldade para abrir um projeto ou localizar um arquivo, a equipe DinoMotion te orienta na hora.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <!-- CTA FINAL -->
+        <div class="final-cta-card motion-card motion-reveal" style="text-align: center; margin-top: 60px; padding: 48px 24px; background: #ffffff; border: 3px solid #111111; border-radius: 20px; box-shadow: 8px 8px 0 #111111;">
+          <span class="section-badge">NÃO PERCA TEMPO</span>
+          <h2 style="font-size: 2.2rem; font-weight: 900; margin-top: 14px; margin-bottom: 14px;">PRONTO PARA ELEVAR O NÍVEL DO SEU JOGO?</h2>
+          <p style="color: #4b5563; font-size: 1.1rem; max-width: 600px; margin: 0 auto 28px auto;">
+            Escolha seu pack agora e comece a editar ainda hoje com arquivos masterizados e garantia de 7 dias.
+          </p>
+          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+            <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-lg btn-coral">
+              <span class="btn-shadow"></span>
+              <span class="btn-face">Comprar Indie Launch Combo (R$ 197)</span>
+            </a>
+            <a href="#study-details" rel="noopener noreferrer" class="btn-tactile btn-lg btn-green">
+              <span class="btn-shadow"></span>
+              <span class="btn-face">Comprar Dino SFX Pack (R$ 97)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="brand-logo" aria-label="DinoMotion Página Inicial">
+          <span class="brand-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 11l4-4 4 4M10 7v11M4 20h16"/></svg>
+          </span>
+          <span>DINOMOTION</span>
+        </a>
+        <p class="footer-text">
+          Estúdio de animação e motion design para o mercado gamer indie. Criamos trailers e identidades que impulsionam wishlists na Steam.
+        </p>
+        <span class="footer-stamp">LUCAS "DINO" · MG · BRASIL 🕹️</span>
+      </div>
+
+      <div class="footer-col">
+        <span class="footer-title">Navegação</span>
+        <ul class="footer-links">
+          <li><a href="index.html">Página Inicial</a></li>
+          <li><a href="index.html#servicos">Trailers & Portfólio</a></li>
+          <li><a href="#sfx-pack">Dino Game SFX Pack</a></li>
+          <li><a href="#launch-combo">Indie Launch Combo</a></li>
+          <li><a href="#licenca-faq">Licença Comercial & FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <span class="footer-title">Suporte & Contato</span>
+        <ul class="footer-links">
+          <li><a href="#study-details" rel="noopener noreferrer">Contato — demonstração</a></li>
+          <li><a href="#study-details">Contato — demonstração</a></li>
+          <li><a href="#">Termos de Uso</a></li>
+          <li><a href="#">Política de Privacidade</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>© 2026 DinoMotion Studio. Todos os direitos reservados. Feito com paixão por games indie.</p>
+        <a href="#scroll-hud" class="btn-back-top" aria-label="Voltar ao topo da página">VOLTAR AO TOPO ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DOCK FLUTUANTE DE SOM AMBIENTE (RETRO CASSETTE DOCK) -->
+  <aside class="floating-sound-dock" aria-label="Controle de Som Ambiente">
+    <button class="btn-bgm-toggle floating-btn" title="Ligar / Desligar Som Ambiente Gamer" aria-label="Ligar ou desligar música ambiente">
+      <span class="bgm-equalizer" aria-hidden="true">
+        <span class="bar b1"></span>
+        <span class="bar b2"></span>
+        <span class="bar b3"></span>
+      </span>
+      <span class="bgm-label">SOM AMBIENTE: OFF</span>
+    </button>
+  </aside>
+
+  <script src="app.js?v=9"></script>
+  <script>
+    // Conecta os botões do soundboard com o SoundboardManager exclusivo
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".sound-play-btn").forEach(btn => {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const key = btn.dataset.key;
+          const card = btn.closest(".sound-sample-card");
+          const playLabel = btn.querySelector(".play-label");
+          const playIcon = btn.querySelector(".play-icon");
+
+          if (!window.SoundboardManager) return;
+
+          const isNowPlaying = window.SoundboardManager.play(
+            key,
+            // onStart
+            () => {
+              // Reseta todos os outros cards imediatamente
+              document.querySelectorAll(".sound-sample-card").forEach(c => c.classList.remove("playing"));
+              document.querySelectorAll(".sound-play-btn .play-label").forEach(l => l.textContent = "Ouvir Sample");
+              document.querySelectorAll(".sound-play-btn .play-icon").forEach(i => i.textContent = "▶");
+
+              if (card) card.classList.add("playing");
+              if (playLabel) playLabel.textContent = "Parar Áudio";
+              if (playIcon) playIcon.textContent = "⏹";
+            },
+            // onEnded
+            () => {
+              if (card) card.classList.remove("playing");
+              if (playLabel) playLabel.textContent = "Ouvir Sample";
+              if (playIcon) playIcon.textContent = "▶";
+            }
+          );
+
+          if (!isNowPlaying) {
+            // Se foi clicado para parar o áudio atual
+            if (card) card.classList.remove("playing");
+            if (playLabel) playLabel.textContent = "Ouvir Sample";
+            if (playIcon) playIcon.textContent = "▶";
+          }
+        });
+      });
+    });
+  </script>
+<aside class="study-notice" aria-label="Projeto demonstrativo"><span>Estudo de interface • demonstração</span><a href="#study-details">Sobre o projeto</a></aside>
+<dialog class="study-dialog" id="study-details" aria-labelledby="study-title"><h2 id="study-title">Um estudo do UNIVERSO STUDIO</h2><p>DinoMotion é um estudo de identidade e interface. Personagem, catálogo, preços e ofertas são demonstrativos. Não há venda, cobrança, entrega de produtos ou contratação por este site.</p><p>Este site demonstra design, movimento e interação do projeto original.</p><p><a href="https://www.instagram.com/universostudioofficial/" target="_blank" rel="noopener noreferrer">Conhecer o UNIVERSO STUDIO</a></p><button type="button">Voltar ao site</button></dialog>
+<script src="study.js"></script>
+</body>
+</html>

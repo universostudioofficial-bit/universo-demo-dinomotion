@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 110" width="100%" height="100%" fill="none">
+  <!-- Retro Game Cloud Variant 3 (Wider Puffy) -->
+  <path d="M 40 80 C 20 80 8 68 8 50 C 8 35 20 22 36 20 C 44 8 64 0 85 0 C 110 0 130 10 140 26 C 150 20 165 20 175 28 C 188 28 198 38 198 52 C 208 55 214 65 214 78 C 214 94 200 104 180 104 L 40 104 C 20 104 8 94 8 80 Z" 
+        fill="#111111" transform="translate(5, 5)" />
+  <path d="M 40 80 C 20 80 8 68 8 50 C 8 35 20 22 36 20 C 44 8 64 0 85 0 C 110 0 130 10 140 26 C 150 20 165 20 175 28 C 188 28 198 38 198 52 C 208 55 214 65 214 78 C 214 94 200 104 180 104 L 40 104 C 20 104 8 94 8 80 Z" 
+        fill="#ffffff" stroke="#111111" stroke-width="4.5" stroke-linejoin="round" />
+  <circle cx="70" cy="62" r="5" fill="#111111" />
+  <circle cx="110" cy="62" r="5" fill="#111111" />
+  <path d="M 85 70 Q 90 76 95 70" stroke="#111111" stroke-width="3" stroke-linecap="round" fill="none" />
+  <ellipse cx="60" cy="68" rx="5" ry="3" fill="#f472b6" opacity="0.6" />
+  <ellipse cx="120" cy="68" rx="5" ry="3" fill="#f472b6" opacity="0.6" />
+</svg>

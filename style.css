@@ -1,0 +1,2876 @@
+/* ============================================================
+   DINOMOTION STUDIO v2 — Design System & Neo-Brutalismo Gamer
+   ============================================================ */
+
+@font-face {
+  font-family: 'Gasoek One';
+  src: url('assets/font/gasoek-digits.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --bg-creme: #fdf6ea;
+  --ink: #111111;
+  --white: #ffffff;
+  
+  /* Cores Temáticas Gamer */
+  --dino-green: #10b981;
+  --coral-neon: #ff5436;
+  --gamepad-purple: #8b5cf6;
+  --coin-yellow: #facc15;
+  --cyan-neon: #06b6d4;
+
+  --panel-active: var(--dino-green);
+
+  /* Sombras e Bordas */
+  --stroke-thin: 2.5px solid var(--ink);
+  --stroke-thick: 3.5px solid var(--ink);
+  --stroke-heavy: 5px solid var(--ink);
+  
+  --shadow-sm: 4px 4px 0px var(--ink);
+  --shadow-md: 6px 6px 0px var(--ink);
+  --shadow-lg: 10px 10px 0px var(--ink);
+  --shadow-xl: 14px 14px 0px var(--ink);
+
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-pill: 9999px;
+
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.65, 0, 0.25, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  background-color: var(--bg-creme);
+  color: var(--ink);
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--bg-creme);
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+body.loading {
+  overflow: hidden;
+}
+
+/* Textura sutil de papel físico */
+.paper-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 999;
+  background-image: url('assets/img/paper.jpg');
+  background-size: 800px;
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.18;
+}
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ============================================================
+   LOADER RETRÔ
+   ============================================================ */
+#loader {
+  position: fixed;
+  inset: 0;
+  background: #38bdf8;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+#loader.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.ld-sky-cloud {
+  position: absolute;
+  opacity: 0.9;
+  animation: floatCloud 14s linear infinite;
+}
+.ld-sky-cloud.c1 { top: 12%; left: -160px; animation-duration: 16s; width: 160px; }
+.ld-sky-cloud.c2 { top: 35%; right: -200px; animation-duration: 20s; animation-direction: reverse; width: 200px; }
+.ld-sky-cloud.c3 { bottom: 15%; left: -140px; animation-duration: 14s; width: 140px; }
+
+@keyframes floatCloud {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(110vw); }
+}
+
+.ld-box {
+  background: var(--white);
+  border: var(--stroke-heavy);
+  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-lg);
+  padding: 40px 48px;
+  text-align: center;
+  position: relative;
+  max-width: 90%;
+  width: 440px;
+  z-index: 2;
+}
+
+.ld-badge {
+  display: inline-block;
+  background: #111111;
+  color: #facc15;
+  border: var(--stroke-thin);
+  box-shadow: var(--shadow-sm);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.ld-title {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 40px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.ld-tagline {
+  font-size: 15px;
+  font-weight: 700;
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+.ld-progress-bar {
+  width: 100%;
+  height: 24px;
+  background: #f3f4f6;
+  border: var(--stroke-thick);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  position: relative;
+}
+
+.ld-progress-fill {
+  height: 100%;
+  width: 0%;
+  background: var(--dino-green);
+  border-radius: var(--radius-pill);
+  transition: width 0.1s linear;
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.navbar {
+  position: sticky;
+  top: 16px;
+  z-index: 100;
+  padding: 0 16px;
+  margin-bottom: 32px;
+}
+
+.nav-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  background: var(--white);
+  border: var(--stroke-thick);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-pill);
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--ink);
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--dino-green);
+  border: var(--stroke-thin);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  box-shadow: 2.5px 2.5px 0 var(--ink);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 800;
+  font-size: 15px;
+  transition: color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--coral-neon);
+}
+
+/* ============================================================
+   BOTÕES TÁTEIS 3D (PUSHABLE BUTTONS)
+   ============================================================ */
+.btn-tactile {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  text-decoration: none;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  user-select: none;
+  font-family: inherit;
+}
+
+.btn-tactile .btn-shadow {
+  position: absolute;
+  inset: 0;
+  background: var(--ink);
+  border-radius: var(--radius-md);
+  transform: translate(6px, 6px);
+  transition: transform 0.12s ease;
+}
+
+.btn-tactile .btn-face {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  gap: 10px;
+  background: var(--coin-yellow);
+  color: var(--ink);
+  border: var(--stroke-thick);
+  border-radius: var(--radius-md);
+  padding: 14px 28px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: transform 0.15s var(--ease-bounce);
+}
+
+.btn-tactile:hover .btn-face {
+  transform: translate(-2px, -2px);
+}
+
+.btn-tactile:active .btn-face,
+.btn-tactile.press .btn-face {
+  transform: translate(6px, 6px);
+  transition: transform 0.05s ease-out;
+}
+
+.btn-tactile.btn-green .btn-face { background: var(--dino-green); color: var(--ink); }
+.btn-tactile.btn-coral .btn-face { background: var(--coral-neon); color: var(--ink); }
+.btn-tactile.btn-purple .btn-face { background: var(--gamepad-purple); color: var(--white); }
+.btn-tactile.btn-white .btn-face { background: var(--white); color: var(--ink); }
+
+.btn-tactile.btn-sm {
+  min-height: 44px;
+  display: inline-block;
+}
+
+.btn-tactile.btn-sm .btn-face {
+  padding: 12px 22px;
+  font-size: 14px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-tactile.btn-lg .btn-face {
+  padding: 18px 36px;
+  font-size: 18px;
+}
+
+/* ============================================================
+   HERO SECTION (MONUMENTAL DISPLAY + MASCOTE LIVRE)
+   ============================================================ */
+.hero {
+  padding: 30px 0 70px;
+  position: relative;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 32px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--coin-yellow);
+  color: var(--ink);
+  border: var(--stroke-thin);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-weight: 900;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  color: #111111;
+}
+
+.hero-title .title-yellow {
+  background: var(--coin-yellow);
+  color: #111111;
+  padding: 2px 12px;
+  border-radius: 10px;
+  border: var(--stroke-thick);
+  box-shadow: 4px 4px 0 #111111;
+  display: inline-block;
+}
+
+.hero-title .title-green {
+  background: var(--dino-green);
+  color: #111111;
+  padding: 2px 12px;
+  border-radius: 10px;
+  border: var(--stroke-thick);
+  box-shadow: 4px 4px 0 #111111;
+  display: inline-block;
+}
+
+.hero-description {
+  font-size: 19px;
+  line-height: 1.6;
+  color: #27272a;
+  font-weight: 700;
+  margin-bottom: 36px;
+  max-width: 580px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Mascote Livre no Canvas */
+.hero-mascot-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dino-floating-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  animation: dinoFloat 5s ease-in-out infinite;
+}
+
+@keyframes dinoFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-12px) rotate(1.2deg); }
+}
+
+.dino-mascot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Seta e Doodles ao redor do Mascote */
+.hero-arrow-doodle {
+  position: absolute;
+  top: 10%;
+  left: -80px;
+  width: 120px;
+  height: 100px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-mascot-sticker {
+  position: absolute;
+  bottom: 8%;
+  left: -40px;
+  background: var(--coin-yellow);
+  color: var(--ink);
+  border: var(--stroke-thick);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transform: rotate(-8deg);
+  z-index: 10;
+}
+
+.hero-mascot-tag {
+  position: absolute;
+  top: 2%;
+  right: -20px;
+  background: var(--white);
+  border: var(--stroke-thick);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  padding: 8px 16px;
+  font-weight: 900;
+  font-size: 13px;
+  text-transform: uppercase;
+  transform: rotate(6deg);
+  z-index: 10;
+}
+
+/* ============================================================
+   TICKER INFINITO (MARQUEE)
+   ============================================================ */
+.ticker-section {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: var(--ink);
+  color: var(--white);
+  border-top: var(--stroke-thick);
+  border-bottom: var(--stroke-thick);
+  overflow: hidden;
+  padding: 14px 0;
+  position: relative;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: tickerSlide 24s linear infinite;
+}
+
+.ticker-section:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes tickerSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding-right: 32px;
+}
+
+.ticker-dot {
+  color: var(--dino-green);
+}
+
+/* ============================================================
+   QUEM ESTÁ NO CONTROLE (PESSOAL & HUMANO)
+   ============================================================ */
+.about-section {
+  padding: 90px 0;
+}
+
+.about-card {
+  background: var(--white);
+  border: var(--stroke-heavy);
+  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-lg);
+  padding: 56px 48px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.about-portrait-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.about-polaroid {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.about-polaroid:hover {
+  transform: rotate(-1deg) scale(1.03);
+}
+
+.about-badge {
+  display: inline-block;
+  background: #111111;
+  color: #facc15;
+  border: var(--stroke-thin);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.about-title {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 38px;
+  line-height: 1.1;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
+}
+
+.about-text {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.about-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.tag-pill {
+  background: #f3f4f6;
+  border: var(--stroke-thin);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Contadores */
+.counters-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.counter-box {
+  border: var(--stroke-thick);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  text-align: center;
+}
+.counter-box.box-1 { background: var(--coin-yellow); }
+.counter-box.box-2 { background: var(--cyan-neon); }
+
+.counter-num {
+  font-family: 'Gasoek One', sans-serif;
+  font-size: 58px;
+  line-height: 1;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.counter-label {
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================================
+   SERVIÇOS & TRAILERS DE GAMES
+   ============================================================ */
+.services-section {
+  padding: 60px 0 100px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-badge {
+  display: inline-block;
+  background: var(--dino-green);
+  color: var(--ink);
+  border: var(--stroke-thin);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-pill);
+  padding: 6px 16px;
+  font-weight: 900;
+  font-size: 13px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.section-title {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 46px;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+/* Abas */
+.tabs-nav {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: -4px;
+  position: relative;
+  z-index: 10;
+}
+
+.tab-btn {
+  background: var(--white);
+  border: var(--stroke-heavy);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 22px 18px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.15s ease, background-color 0.2s ease;
+  font-family: inherit;
+  position: relative;
+  border-bottom: none;
+}
+
+.tab-btn:hover {
+  transform: translateY(-4px);
+}
+
+.tab-btn.active {
+  background: var(--panel-active);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.tab-btn.tab-saas.active { background: var(--dino-green); color: var(--ink); }
+.tab-btn.tab-criativos.active { background: var(--coral-neon); color: var(--ink); }
+.tab-btn.tab-identidade.active { background: var(--gamepad-purple); color: var(--white); }
+
+.tab-icon {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.tab-name {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 19px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Painel de Vídeos */
+.services-panel {
+  background: var(--panel-active);
+  border: var(--stroke-heavy);
+  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-lg);
+  padding: 44px;
+  transition: background-color 0.5s var(--ease-smooth);
+  position: relative;
+}
+
+.panel-triangle {
+  position: absolute;
+  top: -24px;
+  left: 16.6%;
+  width: 48px;
+  height: 24px;
+  background: var(--panel-active);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translateX(-50%);
+  transition: left 0.5s var(--ease-smooth), background-color 0.5s var(--ease-smooth);
+  z-index: 12;
+}
+
+.tab-content {
+  display: none;
+  animation: riseUp 0.45s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes riseUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.tab-info {
+  background: var(--white);
+  border: var(--stroke-thick);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-md);
+  padding: 22px 28px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.tab-info-text h3 {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.tab-info-text p {
+  font-size: 15px;
+  font-weight: 700;
+  color: #4b5563;
+}
+
+/* Video Grid com Game HUD */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.video-card {
+  background: var(--white);
+  border: var(--stroke-heavy);
+  box-shadow: var(--shadow-lg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 10;
+  transition: transform 0.2s ease;
+}
+
+.video-card:hover {
+  transform: translateY(-4px);
+}
+
+.video-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+
+/* Game Title Overlay on Video */
+.video-game-overlay {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.game-title-badge {
+  background: #111111;
+  color: #facc15;
+  border: 2px solid #111111;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.game-steam-badge {
+  background: #10b981;
+  color: #111111;
+  border: 2px solid #111111;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: 900;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.btn-sound {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: var(--stroke-thick);
+  box-shadow: 3px 3px 0 var(--ink);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.15s var(--ease-bounce);
+}
+
+.btn-sound:hover {
+  transform: scale(1.1) translate(-1px, -1px);
+}
+
+.btn-sound:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0 0 0 var(--ink);
+}
+
+.btn-sound svg {
+  width: 22px;
+  height: 22px;
+  fill: var(--ink);
+}
+
+/* ============================================================
+   PRODUTOS (MOCKUPS 3D DE CAIXAS DE GAMES COLECIONÁVEIS)
+   ============================================================ */
+.products-section {
+  padding: 60px 0 110px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+.product-box-card {
+  background: var(--white);
+  border: var(--stroke-heavy);
+  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.25s ease;
+}
+
+.product-box-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-box-card.featured {
+  background: #fffbeb;
+  transform: scale(1.03);
+}
+.product-box-card.featured:hover {
+  transform: scale(1.03) translateY(-8px);
+}
+
+.badge-featured {
+  position: absolute;
+  top: 14px;
+  right: 18px;
+  background: #111111;
+  color: #facc15;
+  border: var(--stroke-thin);
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--radius-pill);
+  padding: 4px 14px;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.prod-box-art {
+  width: 100%;
+  max-width: 240px;
+  height: 220px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prod-box-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.25s ease;
+}
+
+.product-box-card:hover .prod-box-art img {
+  transform: scale(1.06) rotate(1deg);
+}
+
+.prod-title {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+.prod-desc {
+  font-size: 15px;
+  font-weight: 700;
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.prod-price {
+  font-family: 'Gasoek One', sans-serif;
+  font-size: 40px;
+  margin-bottom: 22px;
+  color: var(--ink);
+}
+
+.prod-price span {
+  font-size: 18px;
+  font-family: inherit;
+}
+
+/* ============================================================
+   CTA FINAL
+   ============================================================ */
+.cta-section {
+  padding: 60px 0 110px;
+}
+
+.cta-box {
+  background: var(--coin-yellow);
+  border: var(--stroke-heavy);
+  box-shadow: var(--shadow-xl);
+  border-radius: var(--radius-lg);
+  padding: 72px 48px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-title {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: clamp(38px, 5vw, 60px);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+}
+
+.cta-sub {
+  font-size: 18px;
+  font-weight: 700;
+  max-width: 600px;
+  margin: 0 auto 36px;
+  color: #1f2937;
+}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+.footer {
+  background: var(--ink);
+  color: var(--white);
+  border-top: var(--stroke-thick);
+  padding: 48px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-brand {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #9ca3af;
+  font-weight: 600;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.social-link {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  background: #1f2937;
+  border: 2px solid #374151;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--white);
+  text-decoration: none;
+  font-size: 18px;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.social-link:hover {
+  background: var(--dino-green);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #27272a;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .brand-logo,
+.footer .brand-logo span,
+.footer .brand-icon {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+}
+
+.footer-text {
+  color: #9ca3af;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-top: 14px;
+  max-width: 320px;
+}
+
+.footer-stamp {
+  display: inline-block;
+  margin-top: 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #facc15;
+  background: #1f2937;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.footer-title {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  color: #facc15;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links li a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.footer-links li a:hover {
+  color: #facc15;
+}
+
+.footer-bottom {
+  padding-top: 24px;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  color: #9ca3af;
+  font-size: 0.88rem;
+}
+
+.btn-back-top {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 8px 16px;
+  background: #1f2937;
+  color: #ffffff;
+  border: 1px solid #374151;
+  border-radius: var(--radius-pill);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.btn-back-top:hover {
+  background: var(--dino-green);
+  color: #111111;
+}
+
+.hero-mascot-mobile {
+  display: none;
+}
+
+/* ============================================================
+   RESPONSIVIDADE (MOBILE / TABLET)
+   ============================================================ */
+@media (max-width: 992px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-description {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-arrow-doodle {
+    display: none;
+  }
+  .hero-mascot-container {
+    display: none !important;
+  }
+  .hero-mascot-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 14px auto 20px;
+  }
+  .dino-floating-wrapper-mobile {
+    position: relative;
+    width: 100%;
+    max-width: 230px;
+    animation: dinoFloat 5s ease-in-out infinite;
+  }
+  .dino-mascot-img-mobile {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .hero-mascot-sticker-mobile {
+    position: absolute;
+    bottom: -6px;
+    left: -15px;
+    background: var(--coin-yellow);
+    color: var(--ink);
+    border: var(--stroke-thick);
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-pill);
+    padding: 5px 12px;
+    font-family: 'Gasoek One', Impact, sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transform: rotate(-6deg);
+    z-index: 10;
+  }
+  .about-card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-portrait-wrap {
+    order: -1;
+  }
+  .about-tags {
+    justify-content: center;
+  }
+  .counters-grid {
+    grid-template-columns: 1fr;
+  }
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-box-card.featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(32px, 8.5vw, 42px);
+    margin-bottom: 12px;
+  }
+  .hero-description {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hero-mascot-sticker {
+    bottom: -15px;
+    left: 10px;
+    font-size: 13px;
+  }
+  .tabs-nav {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .tab-btn {
+    border-radius: var(--radius-md);
+    border-bottom: var(--stroke-heavy);
+  }
+  .panel-triangle {
+    display: none;
+  }
+  .services-panel {
+    padding: 24px 16px;
+  }
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+  .cta-box {
+    padding: 44px 20px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* ============================================================
+   UPGRADE v4 — MICROINTERAÇÕES ARCADE, SFX & MODAL CRT
+   ============================================================ */
+
+/* 1. Navbar SFX Toggle */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.btn-bgm-toggle,
+.btn-sfx-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  gap: 8px;
+  background: var(--white);
+  color: var(--ink);
+  border: var(--stroke-thin);
+  box-shadow: 2.5px 2.5px 0 var(--ink);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease, color 0.15s ease;
+  user-select: none;
+}
+
+.btn-bgm-toggle:hover,
+.btn-sfx-toggle:hover {
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: 4px 4px 0 var(--ink);
+  background: var(--coin-yellow);
+}
+
+.btn-bgm-toggle:active,
+.btn-sfx-toggle:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0.5px 0.5px 0 var(--ink);
+}
+
+.btn-bgm-toggle.playing {
+  background: #111111;
+  color: var(--coin-yellow);
+  border-color: #111111;
+}
+
+.btn-bgm-toggle.playing .bgm-equalizer .bar {
+  background: var(--coin-yellow);
+}
+
+/* Equalizador animado em tempo real */
+.bgm-equalizer {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2.5px;
+  height: 14px;
+  width: 14px;
+}
+
+.bgm-equalizer .bar {
+  width: 3px;
+  background: currentColor;
+  border-radius: 1px;
+  height: 4px;
+  transition: height 0.15s ease;
+}
+
+.btn-bgm-toggle.playing .bgm-equalizer .b1 {
+  animation: eqBounce1 0.7s infinite alternate ease-in-out;
+}
+.btn-bgm-toggle.playing .bgm-equalizer .b2 {
+  animation: eqBounce2 0.5s infinite alternate ease-in-out 0.15s;
+}
+.btn-bgm-toggle.playing .bgm-equalizer .b3 {
+  animation: eqBounce3 0.6s infinite alternate ease-in-out 0.3s;
+}
+
+@keyframes eqBounce1 { 0% { height: 3px; } 100% { height: 14px; } }
+@keyframes eqBounce2 { 0% { height: 6px; } 100% { height: 13px; } }
+@keyframes eqBounce3 { 0% { height: 2px; } 100% { height: 12px; } }
+
+/* Dock flutuante de controle de áudio */
+.floating-sound-dock {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+}
+
+.floating-sound-dock .btn-bgm-toggle {
+  box-shadow: 4px 4px 0 var(--ink);
+  border: 2.5px solid var(--ink);
+}
+
+.floating-sound-dock .btn-bgm-toggle:hover {
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+@media (max-width: 600px) {
+  .floating-sound-dock {
+    bottom: 14px;
+    right: 14px;
+  }
+  .floating-sound-dock .btn-bgm-toggle {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* 2. Balão de Fala do Mascote Dino Rex (RPG Quotes) */
+.dino-floating-wrapper,
+.dino-floating-wrapper-mobile {
+  cursor: pointer;
+}
+
+.dino-speech-bubble {
+  position: absolute;
+  top: -46px;
+  left: -20px;
+  background: #ffffff;
+  border: var(--stroke-thick);
+  box-shadow: 4px 4px 0 var(--ink);
+  border-radius: var(--radius-md);
+  padding: 8px 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  color: var(--ink);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px) scale(0.9);
+  transition: opacity 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 60;
+  white-space: nowrap;
+}
+
+.dino-speech-bubble.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.dino-speech-bubble .speech-tail {
+  position: absolute;
+  bottom: -11px;
+  left: 55px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 11px solid var(--ink);
+}
+
+.dino-speech-bubble .speech-tail::after {
+  content: '';
+  position: absolute;
+  bottom: 3.5px;
+  left: -6.5px;
+  width: 0;
+  height: 0;
+  border-left: 6.5px solid transparent;
+  border-right: 6.5px solid transparent;
+  border-top: 9px solid #ffffff;
+}
+
+.dino-speech-bubble.mobile {
+  top: -38px;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px) scale(0.9);
+  font-size: 12px;
+  padding: 6px 12px;
+}
+
+.dino-speech-bubble.mobile.visible {
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.dino-speech-bubble.mobile .speech-tail {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* 3. Filtros de Gênero na Seção de Trailers */
+.genre-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.genre-tag {
+  background: var(--white);
+  color: var(--ink);
+  border: var(--stroke-thin);
+  box-shadow: 2.5px 2.5px 0 var(--ink);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.15s ease, color 0.15s ease;
+}
+
+.genre-tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 3.5px 3.5px 0 var(--ink);
+}
+
+.genre-tag.active {
+  background: var(--ink);
+  color: var(--coin-yellow);
+}
+
+/* 4. Dica de Expansão e Estado do Card */
+.video-card {
+  cursor: pointer;
+}
+
+.game-expand-hint {
+  background: #111111 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 900;
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.video-card:hover .game-expand-hint {
+  background: var(--dino-green) !important;
+  color: var(--ink) !important;
+  border-color: var(--ink);
+}
+
+.video-card.hidden {
+  display: none !important;
+}
+
+/* 5. 3D Tilt tátil nas Caixas Big Box */
+.prod-box-art {
+  perspective: 800px;
+}
+
+.prod-box-art img {
+  transition: transform 0.3s ease-out;
+  transform-style: preserve-3d;
+}
+
+/* 6. Arcade CRT Modal Lightbox */
+.arcade-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.arcade-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.arcade-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(6px);
+}
+
+.arcade-modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 860px;
+  background: #111111;
+  border: 5px solid #27272a;
+  outline: 4px solid #111111;
+  border-radius: 18px;
+  box-shadow: 12px 14px 0 #000000;
+  overflow: hidden;
+  z-index: 10;
+  transform: scale(0.92);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.arcade-modal.open .arcade-modal-box {
+  transform: scale(1);
+}
+
+.arcade-bezel-header {
+  background: #18181b;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 3px solid #27272a;
+}
+
+.arcade-bezel-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.arcade-bezel-dots .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1.5px solid #111111;
+}
+
+.arcade-bezel-dots .dot.red { background: #ef4444; }
+.arcade-bezel-dots .dot.yellow { background: #facc15; }
+.arcade-bezel-dots .dot.green { background: #10b981; }
+
+.arcade-bezel-title {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #facc15;
+  text-transform: uppercase;
+}
+
+.arcade-modal-close {
+  background: #27272a;
+  color: #ffffff;
+  border: 2px solid #3f3f46;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+.arcade-modal-close:hover {
+  background: #ef4444;
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.arcade-screen-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000000;
+  overflow: hidden;
+}
+
+.arcade-screen-container video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.arcade-scanlines {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
+  background-size: 100% 4px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.arcade-modal-footer {
+  background: #18181b;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 3px solid #27272a;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.modal-game-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-badge-steam {
+  background: #10b981;
+  color: #111111;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 900;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.modal-engine-tag {
+  color: #a1a1aa;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+
+/* ============================================================
+   UPGRADE v5 — ANIMAÇÕES CINÉTICAS, CARDS & MOTIONS AWWWARDS
+   ============================================================ */
+
+/* 1. Kinetic Typography (Split Reveal no Hero) */
+.kinetic-title {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kinetic-line {
+  display: block;
+  overflow: hidden;
+  line-height: 1.12;
+}
+
+.kinetic-inner {
+  display: inline-block;
+  transform: translateY(115%);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+body.loaded .kinetic-line:nth-child(1) .kinetic-inner {
+  transform: translateY(0);
+  transition-delay: 0.12s;
+}
+
+body.loaded .kinetic-line:nth-child(2) .kinetic-inner {
+  transform: translateY(0);
+  transition-delay: 0.24s;
+}
+
+body.loaded .kinetic-line:nth-child(3) .kinetic-inner {
+  transform: translateY(0);
+  transition-delay: 0.36s;
+}
+
+/* 2. Brush Highlighter animado nos títulos de seção */
+.brush-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.brush-highlight::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  bottom: 2px;
+  height: 38%;
+  background: var(--coin-yellow);
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: left center;
+  border-radius: 4px;
+  opacity: 0.88;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.18s;
+}
+
+.motion-reveal.is-revealed .brush-highlight::after,
+.is-revealed .brush-highlight::after {
+  transform: scaleX(1);
+}
+
+/* 3. Staggered Scroll Entrance (Cascata nos Cards e Seções - 100% Nítido / Zero Blur) */
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.motion-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.video-grid .video-card.motion-reveal,
+.products-grid .product-box-card.motion-reveal,
+.counters-grid .counter-box.motion-reveal,
+.about-tags .tag-pill.motion-reveal {
+  transition-delay: calc(var(--stagger-i, 0) * 85ms);
+}
+
+/* 4. Interactive Spotlight Glow & Card Physics */
+.motion-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform, box-shadow;
+}
+
+.motion-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(360px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(16, 185, 129, 0.16), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.28s ease;
+  pointer-events: none;
+  z-index: 4;
+}
+
+.motion-card:hover::before {
+  opacity: 1;
+}
+
+.video-card:hover {
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: 14px 14px 0 var(--ink) !important;
+}
+
+.video-card:hover .game-steam-badge {
+  animation: badgeWiggle 0.4s ease-in-out;
+}
+
+@keyframes badgeWiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-5deg) scale(1.08); }
+  75% { transform: rotate(5deg) scale(1.08); }
+}
+
+.product-box-card:hover {
+  transform: translateY(-8px) scale(1.012);
+  box-shadow: 14px 14px 0 var(--ink) !important;
+}
+
+/* 5. Idle Floats & Doodles Arcade */
+.hero-mascot-tag {
+  animation: floatTag1 3.8s ease-in-out infinite alternate;
+}
+
+.hero-mascot-sticker {
+  animation: floatTag2 4.4s ease-in-out infinite alternate;
+}
+
+@keyframes floatTag1 {
+  0% { transform: rotate(-5deg) translateY(0); }
+  100% { transform: rotate(-2deg) translateY(-8px); }
+}
+
+@keyframes floatTag2 {
+  0% { transform: rotate(3deg) translateY(0); }
+  100% { transform: rotate(5deg) translateY(-6px); }
+}
+
+.hero-arrow-doodle {
+  animation: arrowNudge 2.8s ease-in-out infinite;
+}
+
+@keyframes arrowNudge {
+  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+  50% { transform: translate(5px, -5px) rotate(-3deg); }
+}
+
+/* Squish & Jump do Mascote no Clique */
+.dino-jump {
+  animation: dinoSquashJump 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+@keyframes dinoSquashJump {
+  0% { transform: scale(1, 1) translateY(0); }
+  20% { transform: scale(1.12, 0.88) translateY(4px); }
+  50% { transform: scale(0.92, 1.1) translateY(-22px) rotate(-3deg); }
+  75% { transform: scale(1.04, 0.96) translateY(2px); }
+  100% { transform: scale(1, 1) translateY(0); }
+}
+
+/* 6. Magnetic Buttons */
+.btn-magnetic {
+  will-change: transform;
+  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* 7. Total Acessibilidade (Prefers-Reduced-Motion) */
+@media (prefers-reduced-motion: reduce) {
+  .kinetic-inner {
+    transform: none !important;
+    transition: none !important;
+  }
+  .brush-highlight::after {
+    transform: scaleX(1) !important;
+    transition: none !important;
+  }
+  .motion-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .motion-card::before {
+    display: none !important;
+  }
+  .hero-mascot-tag,
+  .hero-mascot-sticker,
+  .hero-arrow-doodle,
+  .dino-floating-wrapper,
+  .dino-floating-wrapper-mobile {
+    animation: none !important;
+  }
+  .btn-magnetic {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ============================================================
+   UPGRADE v6 — SCROLL PROGRESS HUD & GAMING DINO ON RETRO TV
+   ============================================================ */
+
+/* 1. Retro Gamer XP Scroll Progress HUD */
+.scroll-hud-bar {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111111 !important;
+  color: #ffffff !important;
+  border: 2px solid #27272a;
+  border-radius: var(--radius-pill);
+  padding: 4px 14px;
+  box-shadow: 2px 2px 0 var(--ink);
+  z-index: 50;
+  display: flex;
+  align-items: center;
+}
+
+.scroll-hud-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #111111 !important;
+  color: #ffffff !important;
+}
+
+.scroll-hud-icon {
+  font-size: 14px;
+  line-height: 1;
+  color: #ffffff !important;
+  background: #111111 !important;
+}
+
+.scroll-hud-label {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.8px;
+  color: #facc15 !important;
+  background: #111111 !important;
+  text-transform: uppercase;
+}
+
+.scroll-hud-track {
+  position: relative;
+  width: 140px;
+  height: 10px;
+  background: #1e293b !important;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  overflow: visible;
+}
+
+.scroll-hud-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, #10b981, #facc15);
+  border-radius: 4px;
+  transition: width 0.08s linear;
+}
+
+.scroll-hud-pin {
+  position: absolute;
+  top: -6px;
+  left: 0%;
+  transform: translateX(-50%);
+  font-size: 13px;
+  line-height: 1;
+  transition: left 0.08s linear;
+  pointer-events: none;
+  color: #ffffff !important;
+  background: #111111 !important;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.scroll-hud-pct {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 900;
+  font-size: 11px;
+  color: #10b981 !important;
+  background: #111111 !important;
+  min-width: 32px;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .scroll-hud-bar {
+    display: none;
+  }
+}
+
+/* 2. Dino Rex Jogando em TV Retrô (Boneco de Papel) */
+.hero-mascot-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.dino-floating-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  filter: drop-shadow(0 14px 24px rgba(0, 0, 0, 0.12));
+}
+
+.dino-floating-wrapper:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.dino-mascot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform-origin: center bottom;
+}
+
+/* 3. Efeito Parallax de Scroll nas Nuvens e Fundo */
+.parallax-layer {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* 4. Ticker Marquee com Resposta de Velocidade */
+.ticker-track.accelerated {
+  animation-duration: 9s !important;
+}
+
+/* 5. Efeito Polaroid Lucas Dino Aperfeiçoado */
+.about-polaroid {
+  width: 100%;
+  max-width: 320px;
+  display: block;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease;
+  filter: drop-shadow(4px 8px 16px rgba(0, 0, 0, 0.15));
+}
+
+.about-polaroid:hover {
+  transform: rotate(-2deg) scale(1.04);
+}
+
+/* ==========================================================================
+   6. PÁGINA DE PRODUTOS & SOUNDBOARD INTERATIVO (NEO-BRUTALIST GAMER)
+   ========================================================================== */
+
+.products-hero {
+  padding: 130px 0 40px 0;
+  text-align: center;
+}
+
+.product-pills-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 18px;
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  box-shadow: 3px 3px 0 var(--ink);
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.pill-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 0 var(--ink);
+  background: var(--coin-yellow);
+}
+
+.pill-btn.active {
+  background: var(--dino-green);
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.product-detail-section {
+  padding: 50px 0;
+}
+
+.product-detail-card {
+  background: var(--white);
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  box-shadow: 8px 8px 0 var(--ink);
+  padding: 40px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.product-detail-card.featured {
+  border-color: var(--ink);
+  box-shadow: 10px 10px 0 var(--ink);
+  background: #fffdf9;
+}
+
+.product-detail-header-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.product-mockup-wrap {
+  text-align: center;
+  position: relative;
+  background: #f4efe6;
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  padding: 24px 16px;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+.product-mockup-wrap img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(4px 8px 12px rgba(0, 0, 0, 0.15));
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.product-mockup-wrap:hover img {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.badge-featured-combo {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111111;
+  color: var(--coin-yellow);
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.8px;
+  padding: 4px 14px;
+  border: 2px solid var(--ink);
+  border-radius: var(--radius-pill);
+  box-shadow: 2px 2px 0 var(--ink);
+  white-space: nowrap;
+}
+
+.product-format-badge {
+  margin-top: 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+  color: #374151;
+  background: var(--white);
+  border: 1.5px solid var(--ink);
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+  display: inline-block;
+}
+
+.product-main-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.badge-tech {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  background: #f3f4f6;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+  border-radius: var(--radius-pill);
+}
+
+.product-heading {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.product-summary {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #374151;
+  margin-bottom: 20px;
+}
+
+.product-price-box {
+  background: #f9fafb;
+  border: 2px dashed #9ca3af;
+  border-radius: 14px;
+  padding: 16px 20px;
+  margin-bottom: 24px;
+}
+
+.price-val {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 2.2rem;
+  color: var(--ink);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.price-sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.price-installments {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #065f46;
+  margin-top: 4px;
+}
+
+.product-cta-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* SOUNDBOARD CONSOLE */
+.soundboard-container {
+  margin-top: 40px;
+  background: #18181b;
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  padding: 30px;
+  color: var(--white);
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.soundboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 2px dashed #3f3f46;
+  margin-bottom: 24px;
+}
+
+.soundboard-title-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.soundboard-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.soundboard-title {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.5px;
+  color: var(--coin-yellow);
+  margin: 0;
+}
+
+.soundboard-subtitle {
+  font-size: 0.88rem;
+  color: #a1a1aa;
+  margin: 2px 0 0 0;
+}
+
+.soundboard-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #27272a;
+  border: 1px solid #3f3f46;
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.8px;
+  color: var(--dino-green);
+}
+
+.status-light.live {
+  width: 8px;
+  height: 8px;
+  background: var(--dino-green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--dino-green);
+  animation: pulseLight 1.5s infinite;
+}
+
+@keyframes pulseLight {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.85); }
+}
+
+.soundboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.sound-sample-card {
+  background: #27272a;
+  border: 2px solid #3f3f46;
+  border-radius: 14px;
+  padding: 18px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sound-sample-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--coin-yellow);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.sound-sample-card.playing {
+  border-color: var(--dino-green);
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.5);
+  background: #1c2826;
+}
+
+.sound-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.sound-number {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 0.85rem;
+  color: #ffffff;
+}
+
+.sound-category {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: var(--coin-yellow);
+  background: rgba(250, 204, 21, 0.12);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.sound-title {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.sound-meta {
+  font-size: 0.78rem;
+  color: #a1a1aa;
+  margin-bottom: 14px;
+}
+
+.sound-play-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 14px;
+  background: var(--white);
+  color: var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.85rem;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--ink);
+  transition: transform 0.12s ease, background-color 0.12s ease, box-shadow 0.12s ease;
+}
+
+.sound-play-btn:hover {
+  background: var(--dino-green);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.sound-play-btn:active {
+  transform: translateY(1px);
+  box-shadow: 1px 1px 0 var(--ink);
+}
+
+.sound-play-btn .play-icon {
+  font-size: 0.8rem;
+}
+
+/* BREAKDOWN & TEMPLATES DETAILS */
+.product-breakdown-details, .templates-showcase {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 2px dashed #d1d5db;
+}
+
+.breakdown-title {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  color: var(--ink);
+}
+
+.breakdown-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.breakdown-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.breakdown-item {
+  background: #fdf6ea;
+  border: 2px solid var(--ink);
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.breakdown-badge {
+  display: inline-block;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.6px;
+  color: var(--ink);
+  background: var(--coin-yellow);
+  padding: 2px 8px;
+  border: 1px solid var(--ink);
+  border-radius: 6px;
+  margin-bottom: 8px;
+}
+
+.breakdown-item h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--ink);
+}
+
+.breakdown-item p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* TEMPLATES SHOWCASE */
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.template-item {
+  background: #ffffff;
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 16px 20px;
+  box-shadow: 3px 3px 0 var(--ink);
+  position: relative;
+  transition: transform 0.15s ease;
+}
+
+.template-item:hover {
+  transform: translateY(-2px);
+}
+
+.tpl-num {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 1.1rem;
+  color: #1f2937;
+}
+
+.template-item h4 {
+  font-size: 1.02rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--ink);
+  padding-right: 30px;
+}
+
+.template-item p {
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* COMBO BONUS BOX */
+.combo-bonus-box {
+  margin-top: 30px;
+  background: #fdf4ff;
+  border: 2px solid var(--gamepad-purple);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 4px 4px 0 var(--gamepad-purple);
+}
+
+.bonus-badge {
+  display: inline-block;
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.8px;
+  color: var(--coin-yellow);
+  background: #111111;
+  border: 1.5px solid #27272a;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+}
+
+.bonus-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.bonus-card {
+  background: var(--white);
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.bonus-icon {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.bonus-card h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.bonus-card p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  color: #4b5563;
+  margin: 0;
+}
+
+/* GUARANTEE & LICENSE & FAQ */
+.license-faq-section {
+  padding: 60px 0;
+}
+
+.guarantee-box {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  background: var(--white);
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 6px 6px 0 var(--ink);
+  margin-bottom: 40px;
+}
+
+.guarantee-seal {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+  background: var(--coin-yellow);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.guarantee-badge-text {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1;
+  color: var(--ink);
+}
+
+.guarantee-badge-sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.65rem;
+  font-weight: 900;
+  color: var(--ink);
+  letter-spacing: 0.5px;
+}
+
+.guarantee-text h3 {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.guarantee-text p {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #374151;
+  margin: 0;
+}
+
+.license-terms-card {
+  background: var(--white);
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 6px 6px 0 var(--ink);
+  margin-bottom: 40px;
+}
+
+.license-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.license-col {
+  padding: 24px;
+  border-radius: 14px;
+  border: 2px solid var(--ink);
+}
+
+.license-col.allow {
+  background: #f0fdf4;
+  border-color: var(--dino-green);
+}
+
+.license-col.forbid {
+  background: #fef2f2;
+  border-color: #ef4444;
+}
+
+.license-col h4 {
+  font-family: 'Gasoek One', Impact, sans-serif;
+  font-size: 1.15rem;
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.license-col.allow h4 { color: #065f46; }
+.license-col.forbid h4 { color: #991b1b; }
+
+.license-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.license-col ul li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: #374151;
+}
+
+/* FAQ ACCORDION */
+.faq-section {
+  background: var(--white);
+  border: 3px solid var(--ink);
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.faq-item {
+  border: 2px solid var(--ink);
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fafafa;
+  transition: background-color 0.15s ease;
+}
+
+.faq-item[open] {
+  background: var(--white);
+  box-shadow: 3px 3px 0 var(--ink);
+}
+
+.faq-summary {
+  padding: 16px 20px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--ink);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-arrow {
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.faq-item[open] .faq-arrow {
+  transform: rotate(180deg);
+}
+
+.faq-content {
+  padding: 0 20px 18px 20px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.faq-content p {
+  margin: 0;
+}
+
+/* RESPONSIVO MOBILE PRODUTOS */
+@media (max-width: 900px) {
+  .product-detail-header-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .product-mockup-wrap {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .product-tag-row {
+    justify-content: center;
+  }
+  .price-val {
+    justify-content: center;
+  }
+  .product-cta-row {
+    justify-content: center;
+  }
+  .soundboard-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .breakdown-grid {
+    grid-template-columns: 1fr;
+  }
+  .templates-grid {
+    grid-template-columns: 1fr;
+  }
+  .bonus-grid {
+    grid-template-columns: 1fr;
+  }
+  .license-grid {
+    grid-template-columns: 1fr;
+  }
+  .guarantee-box {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .soundboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-detail-card {
+    padding: 24px 16px;
+  }
+  .soundboard-container {
+    padding: 20px 14px;
+  }
+  .license-terms-card, .faq-section {
+    padding: 24px 16px;
+  }
+}
